@@ -5,10 +5,10 @@
 \theoremstyle{definition}
 \newtheorem{exercise}{Exercise}
 
-\newcommand{\N}{\mathbf{N}}
-\newcommand{\Z}{\mathbf{Z}}
-\newcommand{\Q}{\mathbf{Q}}
-\newcommand{\R}{\mathbf{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
 \newcommand{\abs}[1]{|#1|}
 \newcommand{\st}{\mathrel{:}}
 
@@ -107,24 +107,24 @@
 
 \begin{exercise}[1.3.2]
   \begin{enumerate}[label={(\alph*)}]
-    \item Let $B = \{0\}$. $\inf{B} = 0 = \sup{B}$. Thus, $\inf{B} \ge \sup{B}$.
+    \item Let $B = \{0\}$. $\inf(B) = 0 = \sup(B)$. Thus, $\inf(B) \ge \sup(B)$.
     \item Impossible.
     \item Let $B$ be a bounded subset of $\Q$ where $B = \{r \in \Q \st 0 < r
-      \le 1 \}$. $\sup{B} = 1 \in B$, but $\inf{B} = 0 \notin B$.
+      \le 1 \}$. $\sup(B) = 1 \in B$, but $\inf(B) = 0 \notin B$.
   \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[1.3.3]
   \begin{enumerate}[label={(\alph*)}]
-    \item By definition, $\inf{A} \in B$ and $\inf{A} \ge b$ for all $b \in B$.
-      Thus, $\inf{A}$ is the maximum of $B$, which implies that $\inf{A} =
-      \sup{B}$.
+    \item By definition, $\inf(A) \in B$ and $\inf(A) \ge b$ for all $b \in B$.
+      Thus, $\inf(A)$ is the maximum of $B$, which implies that $\inf(A) =
+      \sup(B)$.
     \item For every nonempty set $A$ of real numbers that is bounded below, we
       can define $B = \{b \in \R \st b\ \text{is a lower bound for $A$}\}$. By
       the Axiom of Completeness, we know that if $B$ is bounded above, $B$ has a
-      least upper bound $\sup{B}$. From (a), we showed that $\sup{B} = \inf{A}$.
+      least upper bound $\sup(B)$. From (a), we showed that $\sup(B) = \inf(A)$.
       Therefore, if $A$ is bounded below, $A$ has a greatest lower bound
-      $\inf{A}$, so there is no need to assert this in the Axiom of
+      $\inf(A)$, so there is no need to assert this in the Axiom of
       Completeness.
   \end{enumerate}
 \end{exercise}
@@ -133,18 +133,18 @@
   \begin{enumerate}[label={(\alph*)}]
     \item Given $a \in A$ and $b \in B$, consider
       \begin{align*}
-        a + b &\le s + b\ \text{(since $s = \sup{A} \ge a$)} \\
-        &\le s + t\ \text{(since $t = \sup{B} \ge b$)}.
+        a + b &\le s + b\ \text{(since $s = \sup(A) \ge a$)} \\
+        &\le s + t\ \text{(since $t = \sup(B) \ge b$)}.
       \end{align*}
       Therefore, $s + t$ is an upper bound for $A + B$.
     \item Given an arbitrary upper bound $u$ for  $A + B$, $a \in A$, and $b \in
       B$, we have $a + b \le u \Rightarrow b \le u - a$. Thus, $u - a$ is an
-      upper bound for $B$. Since $t = \sup{B}$ is the least upper bound for $B$,
+      upper bound for $B$. Since $t = \sup(B)$ is the least upper bound for $B$,
       $t \le u - a$.
     \item It follows from (b) that $a \le u - t$. Thus, $u - t$ is an upper
-      bound for $A$. As such, $\sup{A} \le u - t \Rightarrow s \le u - t
+      bound for $A$. As such, $\sup(A) \le u - t \Rightarrow s \le u - t
       \Rightarrow s + t \le u$. Therefore, $\sup(A + B) = s + t$.
-    \item Since $s = \sup{A}$ and $t = \sup{B}$, given an arbitrary $\epsilon >
+    \item Since $s = \sup(A)$ and $t = \sup(B)$, given an arbitrary $\epsilon >
       0$, $a \in A$, and $b \in B$, we know $s - \frac{\epsilon}{2} < a$ and $t
       - \frac{\epsilon}{2} < b$ by Lemma 1.3.8. Then,
       \begin{align*}

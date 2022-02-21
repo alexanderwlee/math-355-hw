@@ -23,10 +23,18 @@
   Suppose towards a contradiction that there is a rational number $r \in \Q$
   satisfying $2^r = 3$. Since $r \in \Q$, we can write $r = \frac{p}{q}$ for
   some $p, q \in \Z$ with $q \neq 0$. Thus, we have $2^\frac{p}{q} = 3
-  \Rightarrow 2^p = 3^q$. Since $2^p = 2 \cdot 2^{p-1}$ and $2^{p-1} \in \Z$,
-  $2^p$ is even. As such, $3^q$ is even as well. However, this is a
-  contradiction since $3^q$ is odd because the product of odd numbers is odd.
-  Therefore, there is no rational number $r$ satisfying $2^r = 3$.
+  \Rightarrow 2^p = 3^q$.
+
+  Suppose $r > 0$. We can assume that $p$ and $q$ have no common factors, so
+  $p, q \in \Z^+$. Since $2^p = 2 \cdot 2^{p-1}$ and $2^{p-1} \in \Z$, $2^p$ is
+  even. As such, $3^q$ is even as well. However, this is a contradiction since
+  $3^q$ is odd because the product of odd numbers is odd.
+
+  Next, suppose $r < 0$. Without loss of generality, suppose $p \in \Z^-$ and $q
+  \in \Z^+$. Since $2^\frac{p}{q} < 1$, we have a contradiction since we assumed
+  that $2^\frac{p}{q} = 3$.
+
+  Finally, suppose $r = 0$. Then, $2^0 = 1 \neq 3$, which is a contradiction.
 \end{exercise}
 
 \begin{exercise}[1.2.3]
@@ -52,10 +60,11 @@
 
 \begin{exercise}[1.2.6]
   \begin{enumerate}[label={(\alph*)}]
-    \item Suppose $a, b \in \R$ where $a, b > 0$. We have that $\abs{a + b} =
-      \abs{a} + \abs{b}$.  We also have that $\abs{-a + (-b)} = \abs{-(a + b)} =
-      \abs{a + b} = \abs{-a} + \abs{-b} = \abs{a} + \abs{b}$. Thus, the triangle
-      inequality holds when $a$ and $b$ have the same sign.
+    \item Suppose $a, b \in \R$ where $a, b > 0$. We have that $\abs{a + b} = a
+      + b = \abs{a} + \abs{b}$.
+
+      Next, suppose that $a, b < 0$. We have that $\abs{a + b} = -(a + b) = (-a)
+      + (-b) = \abs{a} + \abs{b}$.
     \item Given $a, b \in \R$,
       \begin{align*}
         {(a + b)}^2 &= a^2 + 2ab + b^2 \\

@@ -1,0 +1,155 @@
+\documentclass{amsart}
+
+\usepackage{enumitem}
+
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\abs}[1]{|#1|}
+\newcommand{\card}[1]{\abs{#1}}
+\newcommand{\st}{\mathrel{:}}
+
+\title{MATH 355: Homework 1}
+\author{Alexander Lee}
+
+\begin{document}
+
+\maketitle
+
+\begin{exercise}[1.3.8]
+  \begin{enumerate}[label={(\alph*)}]
+    \item Supremum: $1$. Infimum: $0$.
+    \item Supremum: $1$. Infimum: $-1$.
+    \item Supremum: $1$. Infimum: $\frac{1}{4}$.
+    \item Supremum: $1$. Infimum: $0$.
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}[1.3.9]
+  \begin{enumerate}[label={(\alph*)}]
+    \item Since $\sup(A) < \sup(B)$, we have $\frac{\sup(B) - \sup(A)}{2} > 0$.
+      Set $m = \frac{\sup(B) - \sup(A)}{2}$. By Lemma 1.3.8, we know $\sup(B) -
+      m < b$ for some $b \in B$. Because
+      \begin{align*}
+        \sup(B) - m &= \sup(B) - \frac{\sup(B) - \sup(A)}{2} \\
+        &= \frac{2 \sup(B) - \sup(B) + \sup(A)}{2} \\
+        &= \frac{\sup(B) + \sup(A)}{2} \\
+        &= \frac{\sup(B) - \sup(A)}{2} + \sup(A) \\
+        &> \sup(A),
+      \end{align*}
+      we know that $\sup(B) - m$ is an upper bound for $A$. Since $\sup(B) - m <
+      b$, $b$ is also an upper bound for $A$. Observe that $b \in B$, so we are
+      done.
+    \item Let $A = B = (0, 1)$. We have $\sup(A) = \sup(B) = 1$, but all upper
+      bounds for $A$ are not elements of $B$.
+  \end{enumerate}
+\end{exercise}
+
+
+\begin{exercise}[1.4.1]
+  \begin{enumerate}[label={(\alph*)}]
+    \item Given $a, b \in \Q$, we can write $a = \frac{p_1}{q_1}$ and $b =
+      \frac{p_2}{q_2}$ for some $p_1, q_1, p_2, q_2 \in \Z$ with $q_1, q_2 \neq
+      0$.  Then, $ab = (\frac{p_1}{q_1}) (\frac{p_2}{q_2}) = \frac{p_1 p_2}{q_1
+      q_2}$. Since $p_1 p_2, q_1 q_2 \in \Z$ and $q_1 q_2 \neq 0$ because $q_1,
+      q_2 \neq 0$, we have that $ab \in \Q$. Next, we can assume that if $a$ or
+      $b$ are negative, the numerator is negative and the denominator is
+      positive. Then, $a + b = \frac{p_1}{q_1} + \frac{p_2}{q_2} = \frac{p_1 q_2
+      + p_2 q_1}{q_1 + q_2}$.  Since $p_1 q_2 + p_2 q_1 \in \Z$ and $q_1 + q_2
+      \neq 0$ because $q_1, q_2 > 0$, we have that $a + b \in \Q$.
+    \item Given $a \in \Q$, we can write $a = \frac{p}{q}$ for some $p, q \in
+      \Z$ with $q \neq 0$. Since $a \neq 0$, we have $p \neq 0$ as well.
+      Suppose $t \in \I$. Then, $a + t = \frac{p}{q} + \frac{qt}{q} = \frac{p +
+      qt}{q}$. Since $p, q \neq 0$, we have $p + qt \neq 0$. Furthermore,
+      because $qt \notin \Z$, we have $p + qt \notin \Z$. Therefore, $a + t
+      \notin \Q$, implying that $a + t \in \I$.  Next, consider $at =
+      \frac{p}{q} (t) = \frac{pt}{q}$. Since $p \neq 0$, we have that $pt \neq
+      0$. Furthermore, because $pt \neq \Z$, we have $at \notin \Q$, which
+      implies that $at \in \I$.
+    \item Given $s, t \in \I$, we have $s + t, st \in \I$.
+  \end{enumerate}
+\end{exercise}
+
+
+\begin{exercise}[1.4.3]
+  Suppose towards a contradiction that $\bigcap_{n=1}^{\infty} (0, 1/n) \neq
+  \emptyset$. Set $A = \bigcap_{n=1}^{\infty} (0, 1/n)$. For all $n \in \N$,
+  $1/n$ is thus an upper bound for $A$. Since $A \neq \emptyset$, there exists
+  an $a \in A$ such that $a > 0$. By the Archimedean Property, there exists an
+  $n \in \N$ such that $1/n < a$, which is a contradiction since our assumption
+  implied that for all $n \in \N$, $1/n$ is an upper bound for A. Therefore,
+  $\bigcap_{n=1}^{\infty} (0, 1/n) = A = \emptyset$.
+\end{exercise}
+
+\begin{exercise}[1.4.4]
+  By the construction of $T$, $b$ is an upper bound for $T$ since $b \ge t$ for
+  all $t \in T$. Given an arbitrary upper bound $u \in \R$ for $T$, suppose
+  towards a contradiction that $u < b$. By the density of $\Q$ in $\R$, there
+  exists an $r \in \Q$ such that $u < r < b$. Since $u < r$ and $r \in T$, $u$
+  is therefore not an upper bound for $T$, which contradicts our previous
+  assumption that $u$ is an upper bound for $T$. Hence, it must be that $b \le
+  u$, implying that $\sup(T) = b$.
+\end{exercise}
+
+\begin{exercise}[1.5.4]
+  \begin{enumerate}[label={(\alph*)}]
+    \item We know that $(-1, 1) \sim \R$ with the function $f(x) = x / (x^2 -
+      1)$. Therefore, what is left is to show that $(-1, 1) \sim (a, b)$. Let $f
+      : (-1, 1) \rightarrow (a, b)$ be given by $f(x) = \frac{b - a}{2} x +
+      \frac{a + b}{2}$. (1--1) Suppose $f(x_1) = f(x_2)$ for some $x_1, x_2
+      \in (-1, 1)$. Then,
+      \begin{align*}
+        &f(x_1) = f(x_2) \\
+        &\implies \frac{b - a}{2} x_1 + \frac{a + b}{2} = \frac{b - a}{2} x_2
+        + \frac{a + b}{2} \\
+        &\implies \frac{b - a}{2} x_1 = \frac{b - a}{2} x_2 \\
+        &\implies x_1 = x_2.
+      \end{align*}
+      (Onto) Given $y \in (a, b)$, let $x = \frac{2y - a - b}{b - a}$. Then,
+      \begin{align*}
+        f(x) &= f\left(\frac{2y - a - b}{b - a}\right) \\
+        &= \frac{b - a}{2} \cdot \frac{2y - a - b}{b - a} + \frac{a + b}{2} \\
+        &= \frac{2y - a - b}{2} + \frac{a + b}{2} \\
+        &= \frac{2y}{2} \\
+        &= y.
+      \end{align*}
+      Since $f$ is 1--1 and onto, we have $(-1, 1) \sim (a, b)$. Thus, $(a, b)
+      \sim \R$.
+    \item TODO
+    \item TODO
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}[1.5.5]
+  \begin{enumerate}[label={(\alph*)}]
+    \item TODO
+    \item TODO
+    \item TODO
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}[1.6.5]
+  \begin{enumerate}[label={(\alph*)}]
+    \item $P(A) = \{\emptyset, \{a\}, \{b\}, \{c\}, \{a, b\}, \{a, c\}, \{b,
+      c\}, \{a, b, c\}\}$
+    \item We proceed with induction on $n$. Our base case is $n = 0$. That is,
+      $A = \emptyset$, which only has one subset, namely $\emptyset$. Since $2^0
+      = 1$, the statement is true for the base case. Now, assume that if $A$ is
+      finite with $n = k$ elements, then $P(A)$ has $2^k$ elements. We want to
+      show that the statement is true if $A$ is finite with $n = k + 1$
+      elements. Suppose $A$ is finite with $k + 1$ elements. Then, there exists
+      a set $B$ such that $A = B \cup \{a\}$ with $a \notin B$. Notice that
+      $\card{B} = k$ and $B \subseteq A$. Further observe that $P(A) = P(B) \cup
+      \{x \cup \{a\} \st x \in P(B)\}$. By the inductive hypothesis, $P(B) =
+      2^k$. Also, $\card{\{x \cup \{a\} \st x \in P(B)\}} = P(B) = 2^k$.
+      Since $P(B)$ and $\{x \cup \{a\} \st x \in P(B)\}$ are disjoint, we have
+      $\card{P(A)} = 2^k + 2^k = 2(2^k) = 2^{k+1}$.
+  \end{enumerate}
+\end{exercise}
+
+\end{document}

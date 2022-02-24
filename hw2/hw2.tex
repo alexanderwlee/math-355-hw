@@ -26,7 +26,7 @@
   \begin{enumerate}[label={(\alph*)}]
     \item Supremum: $1$. Infimum: $0$.
     \item Supremum: $1$. Infimum: $-1$.
-    \item Supremum: $1$. Infimum: $\frac{1}{4}$.
+    \item Supremum: $\frac{1}{3}$. Infimum: $\frac{1}{4}$.
     \item Supremum: $1$. Infimum: $0$.
   \end{enumerate}
 \end{exercise}
@@ -60,18 +60,21 @@
       q_2 \neq 0$, we have that $ab \in \Q$. Next, we can assume that if $a$ or
       $b$ are negative, the numerator is negative and the denominator is
       positive. Then, $a + b = \frac{p_1}{q_1} + \frac{p_2}{q_2} = \frac{p_1 q_2
-      + p_2 q_1}{q_1 + q_2}$.  Since $p_1 q_2 + p_2 q_1 \in \Z$ and $q_1 + q_2
-      \neq 0$ because $q_1, q_2 > 0$, we have that $a + b \in \Q$.
-    \item Given $a \in \Q$, we can write $a = \frac{p}{q}$ for some $p, q \in
-      \Z$ with $q \neq 0$. Since $a \neq 0$, we have $p \neq 0$ as well.
-      Suppose $t \in \I$. Then, $a + t = \frac{p}{q} + \frac{qt}{q} = \frac{p +
-      qt}{q}$. Since $p, q \neq 0$, we have $p + qt \neq 0$. Furthermore,
-      because $qt \notin \Z$, we have $p + qt \notin \Z$. Therefore, $a + t
-      \notin \Q$, implying that $a + t \in \I$.  Next, consider $at =
-      \frac{p}{q} (t) = \frac{pt}{q}$. Since $p \neq 0$, we have that $pt \neq
-      0$. Furthermore, because $pt \neq \Z$, we have $at \notin \Q$, which
-      implies that $at \in \I$.
-    \item Given $s, t \in \I$, we have $s + t, st \in \I$.
+      + p_2 q_1}{q_1 q_2}$.  Since $p_1 q_2 + p_2 q_1 \in \Z$ and $q_1  q_2 \neq
+      0$ because $q_1, q_2 \neq 0$, we have that $a + b \in \Q$.
+    \item Let $a \in \Q$ with $a \neq 0$ and $t \in \I$. Suppose towards a
+      contradiction that $a + t \in \Q$. Since $-a \in \Q$ and $\Q$ is closed
+      under addition, $t = (a + t) + (-a) \in \Q$. This is a contradiction since
+      we assumed that $t \in \I$. Therefore, $a + t \in \I$. Next, suppose
+      towards a contradiction that $at \in \I$. Since $a \neq 0$, we have
+      $\frac{1}{a} \in \Q$. Because $\Q$ is closed under multiplication $t =
+      (\frac{1}{a}) (at) \in \Q$. This is a contradiction since we assumed $t
+      \in \I$. Therefore, $at \in \I$.
+    \item $\I$ is not closed under addition and multiplication. To show that
+      $\I$ is not closed under addition, consider $s = \sqrt{2}$ and $t = 1 -
+      \sqrt{2}$. We thus have $s + t = \sqrt{2} + 1 - \sqrt{2} = 1 \notin \I$.
+      To show that $\I$ is not closed under multiplication, consider $s =
+      t = \sqrt{2}$. Then, $st = \sqrt{2} \cdot \sqrt{2} = 2 \notin \I$.
   \end{enumerate}
 \end{exercise}
 

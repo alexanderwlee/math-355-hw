@@ -122,17 +122,17 @@
       Since $f$ is 1--1 and onto, we have $(-1, 1) \sim (a, b)$. Thus, $(a, b)
       \sim \R$.
     \item Consider the function $f : (a, \infty) \rightarrow \R$ given by $f(x)
-      = \ln(x + a)$. (1--1) Suppose $f(x_1) = f(x_2)$ for some $x_1, x_2 \in (a,
+      = \ln(x - a)$. (1--1) Suppose $f(x_1) = f(x_2)$ for some $x_1, x_2 \in (a,
       \infty)$. Then,
       \begin{align*}
-        f(x_1) = f(x_2) &\implies \ln(x_1 + a) = \ln(x_2 + a) \\
-        &\implies x_1 + a = x_2 + a \\
+        f(x_1) = f(x_2) &\implies \ln(x_1 - a) = \ln(x_2 - a) \\
+        &\implies x_1 - a = x_2 - a \\
         &\implies x_1 = x_2.
       \end{align*}
-      (Onto) Given $y \in \R$, let $x = e^y - a$. Then,
+      (Onto) Given $y \in \R$, let $x = e^y + a$. Then,
       \begin{align*}
-        f(x) &= f(e^y - a) \\
-        &= \ln(e^y - a + a) \\
+        f(x) &= f(e^y + a) \\
+        &= \ln(e^y + a - a) \\
         &= \ln(e^y) \\
         &= y.
       \end{align*}
@@ -184,10 +184,10 @@
       elements. Suppose $A$ is finite with $k + 1$ elements. Then, there exists
       a set $B$ such that $A = B \cup \{a\}$ with $a \notin B$. Notice that
       $\card{B} = k$ and $B \subseteq A$. Further observe that $P(A) = P(B) \cup
-      \{x \cup \{a\} \st x \in P(B)\}$. By the inductive hypothesis, $P(B) =
-      2^k$. Also, $\card{\{x \cup \{a\} \st x \in P(B)\}} = P(B) = 2^k$.
-      Since $P(B)$ and $\{x \cup \{a\} \st x \in P(B)\}$ are disjoint, we have
-      $\card{P(A)} = 2^k + 2^k = 2(2^k) = 2^{k+1}$.
+      \{x \cup \{a\} \st x \in P(B)\}$. By the inductive hypothesis,
+      $\card{P(B)} = 2^k$. Also, $\card{\{x \cup \{a\} \st x \in P(B)\}} =
+      \card{P(B)} = 2^k$.  Since $P(B)$ and $\{x \cup \{a\} \st x \in P(B)\}$
+      are disjoint, we have $\card{P(A)} = 2^k + 2^k = 2(2^k) = 2^{k+1}$.
   \end{enumerate}
 \end{exercise}
 

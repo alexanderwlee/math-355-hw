@@ -1,0 +1,138 @@
+\documentclass{amsart}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert} % absolute value
+% Swap the definition of \abs*, so that \abs
+% resizes the size of the bars, and the starred version does not.
+\makeatletter
+\let\oldabs\abs%
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+\makeatother
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\card}[1]{\abs{#1}}
+\newcommand{\st}{\mathrel{:}}
+
+\title{MATH 355: Homework 3}
+\author{Alexander Lee}
+
+\begin{document}
+
+\maketitle
+
+\begin{exercise}[2.2.1]
+  Example: consider the sequence $(a_n)$, where $a_n = {(-1)}^n$. The sequence
+  verconges to $1$ if we set $\epsilon = 3$. This sequence is also divergent.
+  Since this sequence also verconges to $-1$ if we set $\epsilon = 3$, a
+  sequence can verconge to two different values. This strange definition
+  describes that a sequence is bounded.
+\end{exercise}
+
+\begin{exercise}[2.2.2]
+  \begin{enumerate}[label={(\alph*)}]
+    \item Let $\epsilon > 0$ be arbitrary. Choose $N \in \N$ such that $N >
+      \frac{3}{25 \epsilon} - \frac{4}{5}$. Let $n \ge N$. Then,
+      \begin{align*}
+        \abs{a_n - \frac{2}{5}} &= \abs{\frac{2n + 1}{5n + 4} - \frac{2}{5}} \\
+        &= \abs{\frac{5 (2n + 1) - 2 (5n + 4)}{25n + 20}} \\
+        &= \abs{\frac{10n + 5 - 10n - 8}{25n + 20}} \\
+        &= \abs{\frac{-3}{25n + 20}} \\
+        &= \frac{3}{25n + 20} \\
+        &\le \frac{3}{25N + 20} \\
+        &< \frac{3}{25 (\frac{3}{25\epsilon} - \frac{4}{5}) + 20} \\
+        &= \frac{3}{\frac{3}{\epsilon} - 20 + 20} \\
+        &= \epsilon.
+      \end{align*}
+      Hence, $\abs{a_n - \frac{2}{5}} < \epsilon$.
+    \item Let $\epsilon > 0$ be arbitrary. Choose $N \in \N$ such that $N >
+      \frac{2}{\epsilon}$. Let $n \ge N$. Then,
+      \begin{align*}
+        \abs{a_n - 0} &= \abs{\frac{2n^2}{n^3 + 3}} \\
+        &= \frac{2n^2}{n^3 + 3} \\
+        &< \frac{2n^2}{n^3} \\
+        &= \frac{2}{n} \\
+        &\le \frac{2}{N} \\
+        &< \frac{2}{\frac{2}{\epsilon}} \\
+        &= \epsilon.
+      \end{align*}
+      Hence, $\abs{a_n - 0} < \epsilon$.
+    \item Let $\epsilon > 0$ be arbitrary. Choose $N \in \N$ such that $N >
+      \frac{1}{\epsilon^3}$. Let $n \ge N$. Then,
+      \begin{align*}
+        \abs{a_n - 0} &= \abs{\frac{\sin(n^2)}{\sqrt[3]{n}}} \\
+        &\le \frac{1}{\sqrt[3]{n}} \\
+        &\le \frac{1}{\sqrt[3]{N}} \\
+        &< \frac{1}{\sqrt[3]{\frac{1}{\epsilon^3}}} \\
+        &= \epsilon.
+      \end{align*}
+      Hence, $\abs{a_n - 0} < \epsilon$.
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}[2.2.4]
+  \begin{enumerate}[label={(\alph*)}]
+    \item Consider the sequence $(a_n)$, where $a_n = {(-1)}^n$. $(a_n)$ has an
+      infinite number of ones, but does not converge to one since it diverges.
+    \item TODO
+    \item TODO
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}[2.2.5]
+  \begin{enumerate}[label={(\alph*)}]
+    \item Let $a_n = [[5 / n]]$. We claim that $\lim{a_n} = 0$. Let $\epsilon >
+      0$ be arbitrary. Choose $N \in \N$ such that $N > 5/\epsilon$. Let $n \ge
+      N$. Then,
+      \begin{align*}
+        \abs{a_n - 0} &= \abs{[[5 / n]]} \\
+        &= [[5 / n]] \\
+        &\le 5 / n \\
+        &\le 5 / N \\
+        &< 5 / (5 / \epsilon) \\
+        &= \epsilon.
+      \end{align*}
+      Hence, $\abs{a_n - 0} < \epsilon$.
+    \item Let $a_n = [[(12 + 4n) / 3n]]$. We claim that $\lim{a_n} = 1$. Let
+      $\epsilon > 0$ be arbitrary. Choose $N \in \N$ such that $N >
+      \frac{4}{\epsilon - \frac{1}{3}}$. Let $n \ge N$. Then,
+      \begin{align*}
+        \abs{a_n - 1} &= \abs{[[(12 + 4n) / 3n]] - 1} \\
+        &= \abs{[[(12 + 4n) / 3n - 1]]} \\
+        &= \abs{[[(12 + 4n - 3n) / 3n]]} \\
+        &= \abs{[[(12 + n) / 3n]]} \\
+        &= [[(12 + n) / 3n]] \\
+        &\le (12 + n) / 3n \\
+        &= 4 / n + 1 / 3 \\
+        &\le 4 / N + 1 / 3 \\
+        &< 4 / (4 / (\epsilon - 1 / 3)) + 1 / 3 \\
+        &= \epsilon - 1 / 3 + 1 / 3 \\
+        &= \epsilon.
+      \end{align*}
+      Hence, $\abs{a_n - 1} < \epsilon$.
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}[2.2.7]
+  \begin{enumerate}[label={(\alph*)}]
+    \item The sequence ${(-1)}^n$ is frequently in the set $\{1\}$.
+    \item The definition of eventually is stronger than that of frequently,
+      since eventually implies frequently.
+    \item A sequence $(a_n)$ converges to $a$ if, given any
+      $\epsilon$-neighborhood $V_\epsilon(a)$ of $a$, $(a_n)$ is eventually in
+      the set $V_\epsilon(a)$. Eventually is the term we want.
+    \item $(x_n)$ is not necessarily eventually in the interval $(1.9, 2.1)$.
+      For instance, consider the sequence $(1, 2, 1, 2, \ldots)$. However,
+      $(x_n)$ is frequently in $(1.9, 2.1)$.
+  \end{enumerate}
+\end{exercise}
+
+\end{document}

@@ -30,11 +30,12 @@
 \maketitle
 
 \begin{exercise}[2.2.1]
-  Example: consider the sequence $(a_n)$, where $a_n = {(-1)}^n$. The sequence
+  Example: consider the sequence $(x_n)$, where $x_n = {(-1)}^n$. The sequence
   verconges to $1$ if we set $\epsilon = 3$. This sequence is also divergent.
   Since this sequence also verconges to $-1$ if we set $\epsilon = 3$, a
   sequence can verconge to two different values. This strange definition
-  describes that a sequence is bounded.
+  describes that a sequence is bounded since we have that $x - \epsilon < x_n <
+  x + \epsilon$.
 \end{exercise}
 
 \begin{exercise}[2.2.2]
@@ -82,40 +83,41 @@
   \begin{enumerate}[label={(\alph*)}]
     \item Consider the sequence $(a_n)$, where $a_n = {(-1)}^n$. $(a_n)$ has an
       infinite number of ones, but does not converge to one since it diverges.
-    \item TODO
-    \item TODO
+    \item Impossible. Suppose towards a contradiction that our sequence $(a_n)
+      \rightarrow a \neq 1$. Let $\epsilon = \frac{1}{2} \abs{a - 1}$. Then,
+      there exists $N \in \N$ such that for all $n \ge N$, we have $\abs{a_n -
+      a} < \epsilon$. Since we have $a_n \in V_\epsilon(a)$ and $1 \notin
+      V_\epsilon(a)$. Thus, at most $N$ terms in $(a_n)$ are not in
+      $V_\epsilon(a)$. However, this is a contradiction since we assumed that we
+      have an infinite number of ones, which are not in $V_\epsilon(a)$.
+    \item Consider the divergent sequence $(a_n) = (-1, 1, -1, 1, 1, -1, 1, 1,
+      1, \ldots)$. For every $n \in \N$ it is possible to find $n$ consecutive
+      ones somewhere in the sequence.
   \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[2.2.5]
   \begin{enumerate}[label={(\alph*)}]
     \item Let $a_n = [[5 / n]]$. We claim that $\lim{a_n} = 0$. Let $\epsilon >
-      0$ be arbitrary. Choose $N \in \N$ such that $N > 5/\epsilon$. Let $n \ge
+      0$ be arbitrary. Choose $N \in \N$ such that $N = 6$. Let $n \ge
       N$. Then,
       \begin{align*}
         \abs{a_n - 0} &= \abs{[[5 / n]]} \\
         &= [[5 / n]] \\
-        &\le 5 / n \\
-        &\le 5 / N \\
-        &< 5 / (5 / \epsilon) \\
-        &= \epsilon.
+        &= 0\ \text{(since for $n \ge 6$, $0 < 5 / n < 1$)} \\
+        &< \epsilon.
       \end{align*}
       Hence, $\abs{a_n - 0} < \epsilon$.
     \item Let $a_n = [[(12 + 4n) / 3n]]$. We claim that $\lim{a_n} = 1$. Let
-      $\epsilon > 0$ be arbitrary. Choose $N \in \N$ such that $N >
-      \frac{4}{\epsilon - \frac{1}{3}}$. Let $n \ge N$. Then,
+      $\epsilon > 0$ be arbitrary. Choose $N \in \N$ such that $N = 7$. Let $n
+      \ge N$. Then,
       \begin{align*}
         \abs{a_n - 1} &= \abs{[[(12 + 4n) / 3n]] - 1} \\
-        &= \abs{[[(12 + 4n) / 3n - 1]]} \\
-        &= \abs{[[(12 + 4n - 3n) / 3n]]} \\
-        &= \abs{[[(12 + n) / 3n]]} \\
-        &= [[(12 + n) / 3n]] \\
-        &\le (12 + n) / 3n \\
-        &= 4 / n + 1 / 3 \\
-        &\le 4 / N + 1 / 3 \\
-        &< 4 / (4 / (\epsilon - 1 / 3)) + 1 / 3 \\
-        &= \epsilon - 1 / 3 + 1 / 3 \\
-        &= \epsilon.
+        &= [[(12 + 4n / 3n)]] - 1\ \text{(since $(12 + 4n) / 3n = 12 / 3n + 4 /
+        3 > 1$)} \\
+        &= 1 - 1\ \text{(since for $n \ge 7$, $1 < (12 + 4n) / 3n < 2$)} \\
+        &= 0 \\
+        &< \epsilon.
       \end{align*}
       Hence, $\abs{a_n - 1} < \epsilon$.
   \end{enumerate}

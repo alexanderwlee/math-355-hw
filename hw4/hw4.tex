@@ -182,9 +182,45 @@
 \end{exercise}
 
 \begin{exercise}[2.4.8]
+  \begin{enumerate}[label={(\alph*)}]
+    \item The sequence of partial sums is defined by
+      \begin{align*}
+        s_m &= \frac{1}{2} + \frac{1}{2^2} + \frac{1}{2^3} + \cdots +
+        \frac{1}{2^m} \\
+        &= \frac{2^{m-1} + 2^{m-2} + \cdots + 1}{2^m} \\
+        &= \frac{2^m - 1}{2^m} \\
+        &= 1 - \frac{1}{2^m}.
+      \end{align*}
+      Since the sequence is increasing and bounded above
+      by $1$, the sequence of partial sums converges by the Monotone Convergence
+      Theorem. Thus, the series converges.
+    \item The sequence of partial sums is defined by
+      \begin{align*}
+        s_m &= \frac{1}{1 \cdot 2} + \frac{1}{2 \cdot 3} + \frac{1}{3 \cdot 4} +
+        \cdots + \frac{1}{n (n + 1)} \\
+        &= \left(1 - \frac{1}{2}\right) + \left(\frac{1}{2} - \frac{1}{3}\right)
+        + \cdots + \left(\frac{1}{n} - \frac{1}{n + 1}\right) \\
+        &= 1 - \frac{1}{n + 1}.
+      \end{align*}
+      Since the sequence of partial sums is increasing and bounded above by $1$,
+      the it converges by the Monotone Convergence Theorem. Thus, the series
+      converges.
+    \item The sequence of partial sums is defined by
+      \begin{align*}
+        s_m &= \log\left(\frac{1}{2}\right) + \log\left(\frac{2}{3}\right) +
+        \log\left(\frac{3}{4}\right) + \cdots + \log\left(\frac{n+1}{n}\right)
+        \\
+        &= \log\left(\frac{1 \times 2 \times 3 \times \cdots \times n + 1}{2
+        \times 3 \times 4 \times \cdots \times n}\right) \\
+        &= \log\left(\frac{n + 1}{1}\right) \\
+        &= \log(n+1).
+      \end{align*}
+      Since the sequence of partial sums is unbounded, it diverges.
+  \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[2.4.9]
+  TODO
 \end{exercise}
 
 \end{document}

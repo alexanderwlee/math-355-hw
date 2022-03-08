@@ -30,9 +30,15 @@
 \maketitle
 
 \begin{exercise}[2.3.3]
-  Given $x_n \le y_n \le z_n$ for all $n \in \N$ and $\lim{x_n} = \lim{z_n} =
-  l$, we know from the Order Limit Theorem (ii) that $l \le \lim{y_n} \le l$
-  for all $n \in \N$. Thus, we have that $\lim{y_n} = l$ as well.
+  Let $\epsilon > 0$ be arbitrary. Since $\lim{x_n} = l$, there exists an $N \in
+  \N$ such that for all $n \ge N$, we have that $\abs{x_n - l} < \epsilon$.
+  Thus, we have $l - \epsilon < x_n < l + \epsilon$. Similarly, since $\lim{z_n}
+  = l$, there exists an $N \in \N$ such that for all $n \ge N$, we have that
+  $\abs{z_n - l} < \epsilon$. Hence, we also have $l - \epsilon < z_n < l +
+  \epsilon$. Because we are given that $x_n \le y_n \le z_n$ for all $n \in \N$,
+  it follows that $l - \epsilon < x_n \le y_n \le z_n < l + \epsilon$, which
+  implies that $l - \epsilon < y_n < l + \epsilon$ and $\abs{y_n - l} <
+  \epsilon$. Therefore, $\lim{y_n} = l$ as well.
 \end{exercise}
 
 \begin{exercise}[2.3.4]
@@ -74,39 +80,64 @@
 
 \begin{exercise}[2.3.7]
   \begin{enumerate}[label={(\alph*)}]
-    \item Consider the divergent sequences $(x_n) = (-1, 1, -1, 1, \ldots)$ and
-      $(y_n) = (1, -1, 1, -1, \ldots)$. Then, we have $(x_n + y_n) = (0, 0, 0,
-      0, \ldots)$, which converges to 0.
-    \item TODO
-    \item Impossible, by the Algebraic Limit Theorem (iv).
-    \item TODO
-    \item TODO
+    \item Possible. Consider the divergent sequences $(x_n) = (-1, 1, -1, 1,
+      \ldots)$ and $(y_n) = (1, -1, 1, -1, \ldots)$. Then, we have $(x_n + y_n)
+      = (0, 0, 0, 0, \ldots)$, which converges to 0.
+    \item Impossible. Observe that $y_n = (x_n + y_n) - x_n$. Since $(x_n +
+      y_n)$ and $(x_n)$ converge, $(y_n)$ must converge as well by the Algebraic
+      Limit Theorem (ii).
+    \item Impossible. Since $(1)$ and $(b_n)$ converge, $(1 / b_n)$ must
+      converge as well by the Algebraic Limit Theorem (iv). TODO
+    \item Impossible. Since $(a_n - b_n)$ is bounded, there exists a number
+      $M_1 > 0$ such that $\abs{a_n - b_n} \le M_1$ for all $n \in \N$.
+      Furthermore, since $(b_n)$ converges, it is also bounded. Thus, there
+      exists a number $M_2 > 0$ such that $\abs{b_n} \le M_2$ for all $n \in
+      \N$. As such, $\abs{a_n} \le \abs{a_n - b_n} + \abs{b_n} \le M_1 + M_2$,
+      so $(a_n)$ must be bounded too.
+    \item Impossible. TODO
   \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[2.3.10]
   \begin{enumerate}[label={(\alph*)}]
-    \item Given $\lim(a_n - b_n) = 0$, we have that $\lim{a_n} - \lim{b_n} =
-      0$ by the Algebraic Limit Theorem (ii). Thus, we also have that $\lim{a_n}
-      = \lim{b_n}$.
-    \item TODO
-    \item Given $(a_n) \rightarrow a$ and $(b_n - a_n) \rightarrow 0$, we have
-      that $\lim{a_n} = a$ and $\lim(b_n - a_n) = 0$. The later limit implies
-      that $\lim{b_n} = \lim{a_n}$ by (a). Thus, we have that $\lim{b_n} =
-      \lim{a_n} = a$ and so $(b_n) \rightarrow a$.
-    \item TODO
+    \item False. Consider $(a_n) = (b_n) = (1, 2, 3, 4, \ldots)$. Since $(a_n -
+      b_n) = (0, 0, 0, 0, \ldots)$, we have that $\lim(a_n - b_n) = 0$. However,
+      since $(a_n)$ and $(b_n)$ are not bounded, they do not even converge to a
+      limit.
+    \item True. Since $(b_n) \rightarrow b$, for any $\epsilon > 0$, there
+      exists an $N \in \N$ such that for all $n \ge N$, we have that $\abs{b_n -
+      b} < \epsilon$. Since $\abs{\abs{b_n} - \abs{b}} \le \abs{b_n - b}$, we
+      also have that $\abs{\abs{b_n} - \abs{b}} < \epsilon$. Thus, $\abs{b_n}
+      \rightarrow \abs{b}$.
+    \item True. Note that $b_n = (b_n - a_n) + a_n$. Thus, by the Algebraic
+      Limit Theorem (ii), we have $\lim{b_n} = \lim(b_n - a_n) + \lim{a_n} = 0 +
+      a = a$.
+    \item True. Since $(a_n) \rightarrow 0$, for any $\epsilon > 0$, there
+      exists an $N \in \N$ such that for all $n \ge N$, we have that $\abs{a_n}
+      < \epsilon$, implying that $-\epsilon < a_n < \epsilon$. Since we have
+      that $\abs{b_n - b} \le a_n$, we therefore have $\abs{b_n - b} \le a_n <
+      \epsilon$. Hence, $(b_n) \rightarrow b$.
   \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[2.3.12]
   \begin{enumerate}[label={(\alph*)}]
-    \item True
-      % By the Order Limit Theorem (iii).
-    \item True.
-      % Proof by contradiction. Assume that a is in (0,1). Since (a_n) -> a, all
-      % but finitely many terms of (a_n) are in (0,1). Contradiction since every
-      % a_n is not in (0,1).
-    \item TODO
+    \item True. Given $b \in B$, we know that $a_n \ge b$ for all $n \in N$
+      since $a_n$ is an upper bound for $B$. By the Order Limit Theorem (iii),
+      we have that $a = \lim{a_n} \ge b$. Thus, $a$ is also an upper bound for
+      $B$.
+    \item True. Suppose that every $a_n$ is in the complement of the interval
+      $(0,1)$. Next, suppose towards a contradiction that $a$ is in $(0,1)$.
+      Since $(a_n) \rightarrow a$, there exists an $\epsilon$-neighborhood
+      $V_\epsilon(a) \subseteq (0,1)$ that contains all but finitely many terms
+      of $(a_n)$. That is, all but finitely many terms of $(a_n)$ are in
+      $(0,1)$. This is a contradiction since we previously assumed that every
+      $a_n$ is not in $(0,1)$.
+    \item False. Consider the sequence $(a_n) = (1.4, 1.41, 1.414, 1.4142,
+      1.41421, \ldots)$, where every consequent term is a decimal approximation
+      of $\sqrt{2}$ that specifies an additional decimal. Each term in the
+      sequence $(a_n)$ is rational, however, by construction, $(a_n) \rightarrow
+      \sqrt{2}$, which is irrational.
   \end{enumerate}
 \end{exercise}
 

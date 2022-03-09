@@ -224,7 +224,26 @@
 \end{exercise}
 
 \begin{exercise}[2.4.9]
-  TODO
+  Let  $(s'_m)$ be the sequence of partial sums for the series
+  $\sum_{n=0}^{\infty} 2^n b_{2^n}$. Since $\sum_{n=0}^{\infty} 2^n b_{2^n}$
+  diverges, $(s'_m)$ diverges by definition. Furthermore, we know that $(s'_m)$
+  is increasing since $b_n \ge 0$ for all $n \in \N$. By the Monotone
+  Convergence Theorem, we thus know that $(s'_m)$ is not bounded above. Let
+  $(s_m)$ be the sequence of partial sums for the series $\sum_{n=1}^{\infty}
+  b_n$. We aim to show that $(s_m)$ is also not bounded above. We show that $2
+  s_{2^m} \ge s'_m$.
+  \begin{align*}
+    2 s_{2^m} &= 2 b_1 + 2 b_2 + 2 b_3 + 2 b_4 + \cdots + 2 b_{2^{m-1}+1} + 2
+    b_{2^{m-1}+2} \cdots + 2 b_{2^m} \\
+    &\ge 2 b_1 + 2 b_2 + (2 b_4 + 2 b_4) + \cdots + (2 b_{2^m} + 2 b_{2^m} +
+    \cdots + 2 b_{2^m}) \\
+    &= 2 b_1 + 2 b_2 + 4 b_4 + 8 b_8 + \cdots + 2^m b_{2^m} \\
+    &\ge b_1 + 2 b_2 + 4 b_4 + 8 b_8 + \cdots + 2^m b_{2^m} \\
+    &= s'_m.
+  \end{align*}
+  Since $(s'_m)$ is not bounded from above, we know that $(s_m)$ is also not
+  bounded from above. Thus, $(s_m)$ diverges and so does $\sum_{n=1}^{\infty}
+  b_n$.
 \end{exercise}
 
 \end{document}

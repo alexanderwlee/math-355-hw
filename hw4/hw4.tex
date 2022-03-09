@@ -87,15 +87,18 @@
     \item Impossible. Observe that $y_n = (x_n + y_n) - x_n$. Since $(x_n +
       y_n)$ and $(x_n)$ converge, $(y_n)$ must converge as well by the Algebraic
       Limit Theorem (ii).
-    \item Impossible. Since $(1)$ and $(b_n)$ converge, $(1 / b_n)$ must
-      converge as well by the Algebraic Limit Theorem (iv). TODO
+    \item Possible. Consider the convergent sequence $(b_n) = (\frac{1}{n})$.
+      Since $(1/b_n) = (n)$ is unbounded, it diverges.
     \item Impossible. Since $(a_n - b_n)$ is bounded, there exists a number
       $M_1 > 0$ such that $\abs{a_n - b_n} \le M_1$ for all $n \in \N$.
       Furthermore, since $(b_n)$ converges, it is also bounded. Thus, there
       exists a number $M_2 > 0$ such that $\abs{b_n} \le M_2$ for all $n \in
       \N$. As such, $\abs{a_n} \le \abs{a_n - b_n} + \abs{b_n} \le M_1 + M_2$,
       so $(a_n)$ must be bounded too.
-    \item Impossible. TODO
+    \item Possible. Consider the sequences $(a_n) = (0, 0, 0, 0, \ldots)$ and
+      $(b_n) = (1, 2, 3, 4, \ldots)$. Clearly, both $(a_n b_n) = (0 \cdot 1, 0
+      \cdot 2, 0 \cdot 3, 0 \cdot 4, \ldots) = (0, 0, 0, 0, \ldots)$ and $(a_n)$
+      are convergent. However, $(b_n)$ diverges since it is unbounded.
   \end{enumerate}
 \end{exercise}
 

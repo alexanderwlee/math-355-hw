@@ -30,15 +30,16 @@
 \maketitle
 
 \begin{exercise}[2.3.3]
-  Let $\epsilon > 0$ be arbitrary. Since $\lim{x_n} = l$, there exists an $N \in
-  \N$ such that for all $n \ge N$, we have that $\abs{x_n - l} < \epsilon$.
-  Thus, we have $l - \epsilon < x_n < l + \epsilon$. Similarly, since $\lim{z_n}
-  = l$, there exists an $N \in \N$ such that for all $n \ge N$, we have that
-  $\abs{z_n - l} < \epsilon$. Hence, we also have $l - \epsilon < z_n < l +
-  \epsilon$. Because we are given that $x_n \le y_n \le z_n$ for all $n \in \N$,
-  it follows that $l - \epsilon < x_n \le y_n \le z_n < l + \epsilon$, which
-  implies that $l - \epsilon < y_n < l + \epsilon$ and $\abs{y_n - l} <
-  \epsilon$. Therefore, $\lim{y_n} = l$ as well.
+  Let $\epsilon > 0$ be arbitrary. Since $\lim{x_n} = l$, there exists an $N_1
+  \in \N$ such that for all $n \ge N_1$, we have that $\abs{x_n - l} <
+  \epsilon$. Thus, we have $l - \epsilon < x_n < l + \epsilon$. Similarly, since
+  $\lim{z_n} = l$, there exists an $N_2 \in \N$ such that for all $n \ge N_2$,
+  we have that $\abs{z_n - l} < \epsilon$. Hence, we also have $l - \epsilon <
+  z_n < l + \epsilon$. Let $N = \max\{N_1, N_2\}$. Because we are given that
+  $x_n \le y_n \le z_n$, it follows that for all $n \ge N$, we have $l -
+  \epsilon < x_n \le y_n \le z_n < l + \epsilon$, which implies that $l -
+  \epsilon < y_n < l + \epsilon$ and $\abs{y_n - l} < \epsilon$. Therefore,
+  $\lim{y_n} = l$ as well.
 \end{exercise}
 
 \begin{exercise}[2.3.4]
@@ -73,7 +74,7 @@
         &= \frac{2 + 3 \lim{a_n}}{1 + 5 \lim{a_n}} \\
         &= \frac{2 + 3 \cdot 0}{1 + 5 \cdot 0} \\
         &= \frac{2}{1} \\
-        &= 1
+        &= 2
       \end{align*}
   \end{enumerate}
 \end{exercise}

@@ -30,18 +30,81 @@
 \maketitle
 
 \begin{exercise}[2.5.1]
+  \begin{enumerate}[label={(\alph*)}]
+    \item TODO % is the subsequence of sequence bounded?
+    \item TODO
+    \item TODO
+    \item TODO
+  \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[2.5.2]
+  \begin{enumerate}[label={(\alph*)}]
+    \item TODO % what is a proper subsequence?
+    \item True. Suppose towards a contradiction that $(x_n)$ converges. Thus, we
+      know that subsequences of $(x_n)$ are convergent, which contradicts the
+      assumption that $(x_n)$ contains a divergent subsequence. Therefore,
+      $(x_n)$ diverges.
+    \item TODO
+    \item TODO
+  \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[2.6.2]
+  \begin{enumerate}[label={(\alph*)}]
+    \item Consider the sequence $a_n = {(-1)}^n \frac{1}{n}$. $(a_n)$ clearly
+      converges to 0, so it is a Cauchy sequence by the Cauchy Criterion. Notice
+      that $(a_n)$ is not monotone as well.
+    \item Impossible. Suppose $(a_n)$ is a Cauchy sequence. Thus, $(a_n)$ is
+      bounded by Lemma 2.6.3. As such, every subsequence of $(a_n)$ must be
+      bounded as well.
+    \item TODO
+    \item Consider the sequence $(a_n) = (0, 1, 0, 2, 0, 3, \ldots)$. Clearly,
+      $(a_n)$ is unbounded. However, $(0, 0, 0, \ldots)$ is a subsequence of
+      $(a_n)$ that is Cauchy.
+  \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[2.6.4]
+  \begin{enumerate}[label={(\alph*)}]
+    \item Let $\epsilon > 0$ be given. Since $(a_n)$ is a Cauchy sequence, there
+      exists an $N_1 \in \N$ such that whenever $m, n \ge N_1$, it follows that
+      $\abs{a_n - a_m} < \epsilon / 2$. Similarly, since $(b_n)$ is a Cauchy
+      sequence, there exists an $N_2 \in \N$ such that whenever $m, n \ge N_2$,
+      it follows that $\abs{b_n - b_m} < \epsilon / 2$. Let $N = \max\{N_1,
+      N_2\}$ and suppose $m, n \ge N$. Then,
+      \begin{align*}
+        \abs{c_n - c_m} &= \abs{\abs{a_n - b_n} - \abs{a_m - b_m}} \\
+        &\le \abs{\abs{a_n - b_n - (a_m - b_m)}}\ \text{(by the Triangle
+        Inequality)} \\
+        &= \abs{a_n - b_n - a_m + b_m} \\
+        &= \abs{a_n - a_m + b_m - b_n} \\
+        &\le \abs{a_n - a_m} + \abs{b_n - b_m}\ \text{(by the Triangle
+        Inequality)} \\
+        &< \epsilon / 2 + \epsilon / 2 \\
+        &= \epsilon.
+      \end{align*}
+      Therefore, $(c_n)$ is a Cauchy sequence.
+    \item Let $a_n = 1$. $(a_n)$ is a Cauchy sequence, but $c_n = {(-1)}^n$ is
+      divergent and thus not a Cauchy sequence.
+    \item Let $a_n = {(-1)}^n \frac{1}{n}$. Then,
+      \[
+        c_n =
+        \begin{cases}
+          0 &\text{if $n$ is odd} \\
+          -1 &\text{if $n$ is even}
+        \end{cases},
+      \]
+      which is divergent and thus not a Cauchy sequence.
+  \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[2.7.1]
+  \begin{enumerate}[label={(\alph*)}]
+    \item TODO
+    \item TODO
+    \item TODO
+  \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[2.7.2]
@@ -52,7 +115,6 @@
 
 \begin{exercise}[2.7.5]
 \end{exercise}
-
 
 \begin{exercise}[2.7.9]
 \end{exercise}

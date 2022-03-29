@@ -67,19 +67,18 @@
 
 \begin{exercise}[2.6.4]
   \begin{enumerate}[label={(\alph*)}]
-    \item Let $\epsilon > 0$ be given. Since $(a_n)$ is a Cauchy sequence, there
-      exists an $N_1 \in \N$ such that whenever $m, n \ge N_1$, it follows that
-      $\abs{a_n - a_m} < \epsilon / 2$. Similarly, since $(b_n)$ is a Cauchy
-      sequence, there exists an $N_2 \in \N$ such that whenever $m, n \ge N_2$,
-      it follows that $\abs{b_n - b_m} < \epsilon / 2$. Let $N = \max\{N_1,
-      N_2\}$ and suppose $m, n \ge N$. Then,
+    \item Let $\epsilon > 0$ be arbitrary. Since $(a_n)$ is a Cauchy sequence,
+      there exists an $N_1 \in \N$ such that whenever $m, n \ge N_1$, it follows
+      that $\abs{a_n - a_m} < \epsilon / 2$. Similarly, since $(b_n)$ is a
+      Cauchy sequence, there exists an $N_2 \in \N$ such that whenever $m, n \ge
+      N_2$, it follows that $\abs{b_n - b_m} < \epsilon / 2$. Let $N =
+      \max\{N_1, N_2\}$ and suppose $m, n \ge N$. Then,
       \begin{align*}
         \abs{c_n - c_m} &= \abs{\abs{a_n - b_n} - \abs{a_m - b_m}} \\
-        &\le \abs{\abs{a_n - b_n - (a_m - b_m)}}\ \text{(by the Triangle
+        &\le \abs{\abs{(a_n - b_n) - (a_m - b_m)}}\ \text{(by the Triangle
         Inequality)} \\
-        &= \abs{a_n - b_n - a_m + b_m} \\
-        &= \abs{a_n - a_m + b_m - b_n} \\
-        &\le \abs{a_n - a_m} + \abs{b_n - b_m}\ \text{(by the Triangle
+        &= \abs{(a_n - a_m) + (b_m - b_n)} \\
+        &\le \abs{a_n - a_m} + \abs{b_m - b_n}\ \text{(by the Triangle
         Inequality)} \\
         &< \epsilon / 2 + \epsilon / 2 \\
         &= \epsilon.
@@ -101,9 +100,16 @@
 
 \begin{exercise}[2.7.1]
   \begin{enumerate}[label={(\alph*)}]
-    \item TODO
-    \item TODO
-    \item TODO
+    \item Let $\epsilon > 0$ be arbitrary. Since $(a_n) \rightarrow 0$, there
+      exists an $N \in \N$ such that whenever $m \ge N$, it follows that
+      $\abs{a_m} < \epsilon$. Then,
+      \begin{align*}
+        \abs{s_n - s_m} &= \abs{a_{m+1} - a_{m+2} - \cdots \pm a_n} \\
+        &\le \abs{a_{m+1}}\ \text{(since $(a_n)$ is decreasing)} \\
+        &\le \abs{a_m} \\
+        &< \epsilon
+      \end{align*}
+      whenever $n > m \ge N$.
   \end{enumerate}
 \end{exercise}
 

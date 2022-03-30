@@ -60,7 +60,8 @@
 
 \begin{exercise}[2.5.2]
   \begin{enumerate}[label={(\alph*)}]
-    \item TODO % what is a proper subsequence?
+    \item True. Since $(x_2, x_3, x_4, \ldots)$ converges and is a proper
+      subsequence of $(x_n)$, $(x_n)$ also converges.
     \item True. Suppose towards a contradiction that $(x_n)$ converges. Thus, we
       know that subsequences of $(x_n)$ are convergent, which contradicts the
       assumption that $(x_n)$ contains a divergent subsequence. Therefore,
@@ -106,12 +107,12 @@
       Therefore, $(c_n)$ is a Cauchy sequence.
     \item Let $a_n = 1$. $(a_n)$ is a Cauchy sequence, but $c_n = {(-1)}^n$ is
       divergent and thus not a Cauchy sequence.
-    \item Let $a_n = {(-1)}^n \frac{1}{n}$. Then,
+    \item Let $a_n = {(-1)}^n \frac{1}{n+1}$. Then,
       \[
         c_n =
         \begin{cases}
-          0 &\text{if $n$ is odd} \\
-          -1 &\text{if $n$ is even}
+          0 &\text{if $n$ is even} \\
+          -1 &\text{if $n$ is odd}
         \end{cases},
       \]
       which is divergent and thus not a Cauchy sequence.
@@ -185,9 +186,18 @@
 \end{exercise}
 
 \begin{exercise}[2.7.9]
+  \begin{enumerate}[label={(\alph*)}]
+    \item TODO
+    \item TODO
+    \item TODO
+  \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[3.2.3]
+  \begin{enumerate}[label={(\alph*)}]
+    \item $\Q$ is not open. Any $\epsilon$-neighborhood of 0, is not contained
+      in $\Q$. $\Q$ is closed.
+  \end{enumerate}
 \end{exercise}
 
 \end{document}

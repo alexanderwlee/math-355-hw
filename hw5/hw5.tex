@@ -31,9 +31,29 @@
 
 \begin{exercise}[2.5.1]
   \begin{enumerate}[label={(\alph*)}]
-    \item TODO % is the subsequence of sequence bounded?
-    \item TODO
-    \item TODO
+    \item Impossible. Let $(a_n)$ be a sequence with a subsequence $(a_{n_k})$,
+      where $(a_{n_k})$ is bounded. By the Balzano-Weierstrass Theorem,
+      $(a_{n_k})$ contains a convergent subsequence. Note that this convergent
+      subsequence of $(a_{n_k})$ is also a subsequence of $(a_n)$. Thus, $(a_n)$
+      contains a convergent subsequence.
+    \item Consider the sequences $a_n = \frac{1}{n}$ and $b_n = 1 +
+      \frac{1}{n}$. Now, define the sequence $(c_n) = (a_1, b_1, a_2, b_2, a_3,
+      b_3, \ldots)$. Notice that $(a_n)$ and $(b_n)$ are both subsequences of
+      $(c)n$. Further notice that $(c_n)$ does not contain 0 or 1 as terms but
+      $(a_n) \rightarrow 0$ and $(b_n) \rightarrow 1$.
+    \item Consider the following sequences.
+      \begin{align*}
+        (a^1_n) &= (1 + 1/1, 1 + 1/2, 1 + 1/3, \ldots) \\
+        (a^2_n) &= (1/2 + 1/1, 1/2 + 1/2, 1/2 + 1/3, \ldots) \\
+        (a^3_n) &= (1/3 + 1/1, 1/3 + 1/2, 1/3 + 1/3, \ldots) \\
+        &\vdotswithin{\dots}
+      \end{align*}
+      Notice that $(a^1_n) \rightarrow 1$, $(a^2_n) \rightarrow 1/2$, $(a^3_n)
+      \rightarrow 1/3$, and so on. Now consider the sequence $(a_n)$ constructed
+      by the top right to bottom left diagonals across the sequences above. That
+      is, $(a_n) = (1 + 1/1, 1 + 1/2, 1/2 + 1/1, 1 + 1/3, 1/2 + 1/2, 1/3 + 1/1,
+      \ldots)$. By construction, $(a_n)$ contains subsequences converging to
+      every point in the infinite set $\{1, 1/2, 1/3, \ldots\}$.
     \item TODO
   \end{enumerate}
 \end{exercise}
@@ -114,12 +134,40 @@
 \end{exercise}
 
 \begin{exercise}[2.7.2]
+  \begin{enumerate}[label={(\alph*)}]
+    \item Converges. $\sum_{n=1}^\infty \frac{1}{2^n}$ converges because it is
+      geometric. Also, $0 \le \frac{1}{2^n + n} \le \frac{1}{2^n}$ for all $n
+      \in \N$, so by the Comparison Test, $\sum_{n=1}^\infty \frac{1}{2^n + n}$
+      converges.
+    \item Converges. We know that $\sum_{n=1}^\infty \frac{1}{n^2}$ converges.
+      Furthermore, since $0 \le \frac{\abs{\sin(n)}}{n^2} \le \frac{1}{n^2}$ for
+      all $n \in \N$, we have that $\sum_{n=1}^\infty \frac{\abs{\sin(n)}}{n^2}$
+      converges by the Comparison Test. As such, $\sum_{n=1}^\infty
+      \frac{\sin(n)}{n^2}$ converges as well by the Absolute Convergence Test.
+    \item TODO
+    \item TODO
+    \item TODO
+  \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[2.7.4]
 \end{exercise}
 
 \begin{exercise}[2.7.5]
+  By the Cauchy Condensation Test, the series $\sum_{n=1}^\infty \frac{1}{n^p}$
+  converges if and only if $\sum_{n=0}^\infty 2^n \frac{1}{{(2^n)}^p}$
+  converges. Notice that $2^n \frac{1}{{(2^n)}^p} = {(\frac{2}{2^p})}^n$. Thus,
+  $\sum_{n=0}^\infty 2^n \frac{1}{{(2^n)}^p}$ converges if and only if
+  $\abs{\frac{2}{2^p}} < 1$ by the Geometric Series Test. It follows that
+  \begin{align*}
+    \abs{\frac{2}{2^p}} < 1 &\iff \frac{2}{2^p} < 1 \\
+    &\iff 2 < 2^p \\
+    &\iff 1 < 2^{p-1} \\
+    &\iff \log_2(1) < p - 1 \\
+    &\iff 0 < p - 1 \\
+    &\iff 1 < p.
+  \end{align*}
+  Thus, we must have that $p > 1$.
 \end{exercise}
 
 \begin{exercise}[2.7.9]

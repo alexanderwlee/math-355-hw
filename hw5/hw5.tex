@@ -32,7 +32,7 @@
 \begin{exercise}[2.5.1]
   \begin{enumerate}[label={(\alph*)}]
     \item Impossible. Let $(a_n)$ be a sequence with a subsequence $(a_{n_k})$,
-      where $(a_{n_k})$ is bounded. By the Balzano-Weierstrass Theorem,
+      where $(a_{n_k})$ is bounded. By the Bolzano-Weierstrass Theorem,
       $(a_{n_k})$ contains a convergent subsequence. Note that this convergent
       subsequence of $(a_{n_k})$ is also a subsequence of $(a_n)$. Thus, $(a_n)$
       contains a convergent subsequence.
@@ -54,7 +54,13 @@
       That is, $(a_n) = (1 + 1/1, 1 + 1/2, 1/2 + 1/1, 1 + 1/3, 1/2 + 1/2, 1/3 +
       1/1, \ldots)$. By construction, $(a_n)$ contains subsequences converging
       to every point in the infinite set $\{1, 1/2, 1/3, \ldots\}$.
-    \item TODO
+    \item Impossible. Let $(a_n)$ be a sequence that contains subsequences
+      converging to every point in the infinite set $\{1, 1/2, 1/3, 1/4, 1/5,
+      \ldots\}$. Thus, the subsequence $(a_{n_k}) \rightarrow \frac{1}{M}$ for
+      all $M \in \N$. For all $M \in \N$, let $x_M \in V_\epsilon(\frac{1}{M})$.
+      Since $0 \le x_M \le \frac{1}{M}$, we have that $(x_M) \rightarrow 0$ by
+      the Squeeze Theorem. Notice that $(x_M)$ is also a subsequence of $(a_n)$
+      and 0 is not in the infinite set.
   \end{enumerate}
 \end{exercise}
 
@@ -66,8 +72,27 @@
       know that subsequences of $(x_n)$ are convergent, which contradicts the
       assumption that $(x_n)$ contains a divergent subsequence. Therefore,
       $(x_n)$ diverges.
-    \item TODO
-    \item TODO
+    \item True. Suppose that $(x_n)$ is bounded and diverges. By the
+      Bolzano-Weierstrass Theorem, since $(x_n)$ is bounded, it contains a
+      convergent subsequence $(x_{n_k}) \rightarrow x$. Since $(x_n)$ diverges,
+      there exists an $\epsilon > 0$ such that for all $N \in \N$, there exists
+      an $n \ge N$ such that  $\abs{x_n - x} \ge \epsilon$ There are infinitely
+      many such $x_n$'s, so throw them into a subsequence $(x_{m_k})$. Since
+      $(x_{m_k})$ is also bounded, $(x_{m_k}) \rightarrow y$ also converges. $x
+      \neq y$ since the terms in $(x_{m_k})$ are all greater than or equal to an
+      $\epsilon$ distance away from $x$ by construction.
+    \item True. Suppose $(x_n)$ is monotone and contains a convergent
+      subsequence $(x_{n_k}) \rightarrow x$. Without loss of generality, suppose
+      that $(x_n)$ is increasing. Since $(x_{n_k}) \rightarrow x$, we have that
+      for any $\epsilon > 0$, there exists an $N \in \N$ such that for all $n_k
+      \ge N$, it follows that $\abs{x_{n_k} - x} < \epsilon$. Take $n_k = N$
+      such that $\abs{x_N - x} < \epsilon$. Next take $n_k = M \ge N$ such that
+      $\abs{x_M - x} < \epsilon$. There exists a term $x_n$ in $(x_n)$ such that
+      $x_N \le x_n \le x_M$ because $(x_n)$ is increasing. Thus, we have that
+      \[
+        \epsilon > x - x_N \ge x - x_n \ge x - x_M > - \epsilon.
+      \]
+      Therefore, $\abs{x - x_n} < \epsilon$ and $(x_n)$ converges.
   \end{enumerate}
 \end{exercise}
 
@@ -79,7 +104,9 @@
     \item Impossible. Suppose $(a_n)$ is a Cauchy sequence. Thus, $(a_n)$ is
       bounded by Lemma 2.6.3. As such, every subsequence of $(a_n)$ must be
       bounded as well.
-    \item TODO
+    \item Impossible. A divergent monotone sequence is unbounded. Thus, any
+      subsequence must also be unbounded. Since the subsequence is unbounded, it
+      cannot converge and so it is not a Cauchy subsequence.
     \item Consider the sequence $(a_n) = (0, 1, 0, 2, 0, 3, \ldots)$. Clearly,
       $(a_n)$ is unbounded. However, $(0, 0, 0, \ldots)$ is a subsequence of
       $(a_n)$ that is Cauchy.
@@ -151,8 +178,8 @@
       $\lim {(-1)}^{n+1} \frac{n+1}{2n} \neq 0$ by the contrapositive of
       Exercise 2.3.10 (b). As such, by Theorem 2.7.3, $\sum_{n=1}^\infty
       {(-1)}^{n+1} \frac{n+1}{2n}$ diverges.
-    \item TODO
-    \item TODO
+    \item Diverges. % TODO: Details are on phone.
+    \item Diverges. % TODO: Details are on phone.
   \end{enumerate}
 \end{exercise}
 
@@ -169,7 +196,17 @@
     \item Impossible. Since $\sum x_n$ and $\sum (x_n + y_n)$ both converge, we
       have that $\sum y_n = \sum (x_n + y_n) - x_n$ converges as well by the
       Algebraic Limit Theorem for Series.
-    \item TODO
+    \item Consider
+      \[
+        x_n =
+        \begin{cases}
+          1/n & \text{if $n$ is even} \\
+          0 & \text{if $n$ is odd}
+        \end{cases}
+      \]
+      $\sum {(-1)}^n x_n = 1/2 + 1/4 + 1/6 + \cdots = \sum \frac{1}{2n}$. Since
+      $\sum \frac{1}{n}$ diverges, $\sum \frac{1}{2n} = 2 \sum \frac{1}{n}$ also
+      diverges.
   \end{enumerate}
 \end{exercise}
 
@@ -192,9 +229,27 @@
 
 \begin{exercise}[2.7.9]
   \begin{enumerate}[label={(\alph*)}]
-    \item TODO
-    \item TODO
-    \item TODO
+    \item By assumption, we know that for all $\epsilon > 0$, there exists an $N
+      \in \N$ such that for all $n \ge N$, it follows that
+      $\abs{\abs{\frac{a_{n+1}}{a_n}} - r} < \epsilon$. Since $r < r' < 1$, we
+      can let $\epsilon = r' - r$. Thus, we have $-r' + r <
+      \abs{\frac{a_{n+1}}{a_n}} - r < r' - r \implies \abs{\frac{a_{n+1}}{a_n}}
+      < r' \implies \frac{\abs{a_{n+1}}}{\abs{a_n}} < r' \implies \abs{a_{n+1}} <
+      \abs{a_n} r' \implies \abs{a_{n+1}} \le \abs{a_n} r'$.
+    \item Since $\lim \abs{\frac{a_{n+1}}{a_n}} = r$ and
+      $\abs{\frac{a_{n+1}}{a_n}} \ge 0$, we have that $0 \le r < r' < 1$ by the
+      Order Limit Theorem. Thus, $\abs{r'} < 1$. By the Geometric Series Test,
+      we hence know that $\abs{a_N} \sum {(r')}^n$ converges.
+    \item Suppose $N \in \N$ and $n \ge N$. Then, notice that
+      \[
+        \frac{\abs{a_{N+n}}}{{(r')}^{n-1}} \le \cdots \le
+        \frac{\abs{a_{N+3}}}{{(r')}^2} \le \frac{\abs{a_{N+2}}}{{(r')}} \le
+        \abs{a_{N+1}} \le \abs{a_N} r'.
+      \]
+      Thus, we have that $0 \le \abs{a_{N+n}} \le \abs{a_N} {(r')}^n$. Since we
+      know that $\sum \abs{a_N} {(r')}^n$ converges from part (b), $\sum
+      \abs{a_n} = \sum \abs{a_{N+n}}$ converges by the Comparison Test.
+      Therefore, $\sum a_n$ converges too.
   \end{enumerate}
 \end{exercise}
 

@@ -85,7 +85,24 @@
 
 \begin{exercise}[3.2.9]
   \begin{enumerate}[label={(\alph*)}]
-    \item TODO
+    \item We first show that ${(\cup_{\lambda \in \Lambda} E_\lambda)}^c =
+      \cap_{\lambda \in \Lambda} E_\lambda^c$.
+      \begin{align*}
+        x \in {(\cup_{\lambda \in \Lambda} E_\lambda)}^c &\iff x \notin
+        \cup_{\lambda \in \Lambda} E_\lambda \\
+        &\iff \forall \lambda \in \Lambda,\ x \notin E_\lambda \\
+        &\iff \forall \lambda \in \Lambda,\ x \in E_\lambda^c \\
+        &\iff x \in \cap_{\lambda \in \Lambbda} E_\lambda^c.
+      \end{align*}
+      Next, we show that ${(\cap_{\lambda \in \Lambda} E_\lambda)}^c =
+      \cup_{\lambda \in \Lambda} E_\lambda^c$.
+      \begin{align*}
+        x \in {(\cap_{\lambda \in \Lambda} E_\lambda)}^c &\iff x \notin
+        \cap_{\lambda \in \Labda} E_\lambda \\
+        &\iff \exists \lambda \in \Lambda\ \text{s.t.}\ x \notin E_\lambda \\
+        &\iff \exists \lambda \in \Lambda\ \text{s.t.}\ x \in E_\lambda^c \\
+        &\iff x \in \cup_{\lambda \in \Lambda} E_\lambda^c.
+      \end{align*}
     \item Suppose $\{E_\lambda \st \lambda \in \Lambda\}$ is a finite collection
       of open sets. Each $E_\lambda^c$ is thus a closed set by Theorem 3.2.13.
       As such, $\cup_{\lambda \in \Lambda} E_\lambda^c$ is the union of a finite
@@ -107,12 +124,30 @@
 \end{exercise}
 
 \begin{exercise}[3.2.10]
+  \begin{enumerate}[label={(\roman*)}]
+    \item Such a set cannot exist. Let $A \subseteq [0, 1]$ be a countable set.
+      Since $A$ is countable, there exists a bijection $f : \N \to A$. We can
+      use the function $f$ to define a sequence $(a_n)$ where $a_n = f(n)$ for
+      all $n \in \N$. Because $(a_n) \subseteq A \subseteq [0, 1]$, $(a_n)$ is
+      bounded. By the Bolzano-Weierstrass Theorem, $(a_n)$ has a convergent
+      subsequence $(a_{n_k}) \to a$. Since $f$ is a bijection, all the terms of
+      $(a_n)$ are distinct, so at most one term in $(a_{n_k})$ can be equal to
+      $a$. Let $(b_n)$ be a subsequence of $(a_{n_k})$ without the term $a$ if
+      it exists. It follows that $(b_n) \to a$, so $a$ is a limit point.
+    \item Consider the set $\Q \cap [0, 1]$.
+    \item TODO
+  \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[3.2.13]
+  TODO
 \end{exercise}
 
 \begin{exercise}[3.2.14]
+  \begin{enumerate}[label={(\alph*)}]
+    \item TODO
+    \item TODO
+  \end{enumerate}
 \end{exercise}
 
 \end{document}

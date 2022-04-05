@@ -145,8 +145,35 @@
 
 \begin{exercise}[3.2.14]
   \begin{enumerate}[label={(\alph*)}]
-    \item TODO
-    \item TODO
+    \item We first show that $E$ is closed if and only if $\overline{E} = E$.
+      Let $L$ be the set of all limit points of $E$. Then,
+      \begin{align*}
+        E\ \text{is closed} &\iff L \subseteq E \\
+        &\iff E \cup L = E \\
+        &\iff \overline{E} = E.
+      \end{align*}
+      Next, we show that $E$ is open if and only if $E^\circ = E$.
+      \begin{align*}
+        E\ \text{is open} &\iff \forall x \in E,\ \exists V_\epsilon(x)
+        \subseteq E \\
+        &\iff E^\circ = E.
+      \end{align*}
+    \item We begin with showing that $\overline{E}^c = {(E^c)}^\circ$. Let $L$
+      be the set of all limit points of $E$. Then,
+      \begin{align*}
+        x \in \overline{E}^c &\iff x \in {(E \cup L)}^c \\
+        &\iff x \in E^c \cap L^c\ \text{(by DeMorgan's Laws)} \\
+        &\iff x \in E^c \wedge x\ \text{is an isolated point} \\
+        &\iff x \in E^c\ \text{s.t.}\ \exists V_\epsilon(x) \subseteq E^c \\
+        &\iff x \in {(E^c)}^\circ.
+      \end{align*}
+      Next, we show that ${(E^\circ)}^c = \overline{E^c}$.
+      \begin{align*}
+        {(E^\circ)}^c &= {({({(E^c)}^c)}^\circ)}^c \\
+        &= {(\overline{E^c}^c)}^c\ \text{(since $\overline{E}^c =
+        {(E^c)}^\circ$)} \\
+        &= \overline{E^c}.
+      \end{align*}
   \end{enumerate}
 \end{exercise}
 

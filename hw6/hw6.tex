@@ -54,12 +54,56 @@
 \end{exercise}
 
 \begin{exercise}[3.2.6]
+  \begin{enumerate}[label={(\alph*)}]
+    \item False. Consider the open set $\R \setminus \{\sqrt{2}\}$.
+    \item False. Consider the closed sets of the form $C_n = \lbrack n, \infty
+      \rparen$ for $n \in \N$. Observe that $C_n \subseteq C_{n+1}$ and
+      $\cup_{n=1}^\infty C_n = \emptyset$.
+    \item True. Given a nonempty open set $O$, we know that for $a \in O$, there
+      exists an $\epsilon$-neighborhood $V_\epsilon(a) \subseteq O$. By the
+      Density of $\Q$ in $\R$, there exists a rational number $r \in
+      V_\epsilon(a)$. Thus, we have that $r \in O$.
+    \item False. Consider the bounded infinite closed set $F = \{\sqrt{2} + 1/n
+      \st n \in \N\} \cup \{\sqrt{2}\}$. Observe that $F$ does not contain any
+      rational number.
+    \item True. The Canter set is defined as $C = \cap_{n=0}^\infty C_n$. Since
+      each $C_n$ is the union of a finite collection of closed sets, each $C_n$
+      is closed. The intersection of an arbitrary collection of closed sets is
+      closed, so the Cantor set $C$ is closed.
+  \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[3.2.8]
+  \begin{enumerate}[label={(\alph*)}]
+    \item Definitely closed.
+    \item Definitely open. % $A \setminus B = A \cap B^c$
+    \item Definitely open.
+    \item Both. % $(A \cap B) \cup (A^c \cap B) = \R$
+    \item Neither.
+  \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[3.2.9]
+  \begin{enumerate}[label={(\alph*)}]
+    \item TODO
+    \item Suppose $\{E_\lambda \st \lambda \in \Lambda\}$ is a finite collection
+      of open sets. Each $E_\lambda^c$ is thus a closed set by Theorem 3.2.13.
+      As such, $\cup_{\lambda \in \Lambda} E_\lambda^c$ is the union of a finite
+      collection of closed sets. By Theorem 3.2.3, $\cap_{\lambda \in \Lambda}
+      E_\lambda$ is open. It follows that ${(\cap_{\lambda \in \Lambda}
+      E_\lambda)}^c$ is closed by Theorem 3.2.13. Since ${(\cap_{\lambda \in
+      \Lambda} E_\lambda)}^c= \cup_{\lambda \in \Lambda} E_\lambda^c$, the union
+      of a finite collection of closed sets is therefore closed.
+
+      Suppose $\{E_\lambda \st \lambda \in \Lambda\}$ is an arbitrary
+      collection of open sets. As such, $\cap_{\lambda \in \Lambda} E_\lambda^c$
+      is the intersection of an arbitrary collection of closed sets. By Theorem
+      3.2.3, $\cup_{\lambda \in \Lambda} E_\lambda$ is open. It follows that
+      ${(\cup_{\lambda \in \Lambda} E_\lambda)}^c$ is closed by Theorem 3.2.13.
+      Since ${(\cup_{\lambda \in \Lambda} E_\lambda)}^c = \cap_{\lambda \in
+      \Lambda} E_\lambda^c$, the intersection of an arbitrary collection of
+      closed sets is closed.
+  \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[3.2.10]

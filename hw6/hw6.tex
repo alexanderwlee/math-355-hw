@@ -75,11 +75,18 @@
 
 \begin{exercise}[3.2.8]
   \begin{enumerate}[label={(\alph*)}]
-    \item Definitely closed.
-    \item Definitely open. % $A \setminus B = A \cap B^c$
-    \item Definitely open.
-    \item Both. % $(A \cap B) \cup (A^c \cap B) = \R$
-    \item Neither.
+    \item Definitely closed since the closure of any set is closed.
+    \item Definitely open since $A \setminus B = A \cap B^c$ and the
+      intersection of a finite collection of open sets is open.
+    \item Definitely open since ${(A^c \cup B)}^c = A \cap B^c$, which is closed
+      as explained in part (b).
+    \item Definitely closed since  $(A \cap B) \cup (A^c \cap B) = (A \cup A^c)
+      \cap B = \R \cap B = B$.
+    \item Definitely open. By the definition of closure, we know $A^c \subseteq
+      \overline{A^c}$. We also know that $\overline{A}^c \subseteq A^c$. Thus,
+      $\overline{A}^c \subseteq \overline{A^c}$. It follows that $\overline{A}^c
+      \cap \overline{A^c} = \overline{A}^c$, which is open since the closure of
+      any set is closed and the complement of a closed set is open.
   \end{enumerate}
 \end{exercise}
 
@@ -143,12 +150,11 @@
       neighborhoods, then one of the three neighborhoods in question  would
       intersect another isolated point in $A$, which is not possible. By the
       Density of $\Q$ in $\R$, we can choose a rational number $r$ in each
-      neighborhood. Since each neighborhood intersects with at most 2 other
-      neighborhoods, the same $r$ can be chosen for at most 3 neighborhoods.
-      Regardless, we are still have uncountably many rational numbers since each
-      rational number $r$ corresponds to at most 3 neighborhoods and we have
-      uncountably many neighborhoods. This is a contradiction since $\Q$ is
-      countable.
+      neighborhood. Each $r$ can be chosen for at most 2 neighborhoods.
+      Regardless, because we have uncountably many neighbors, we therefore have
+      uncountably many rational numbers since each rational number $r$
+      corresponds to at most 2 neighborhoods. This is a contradiction since $\Q$
+      is countable.
   \end{enumerate}
 \end{exercise}
 

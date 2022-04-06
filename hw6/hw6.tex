@@ -135,7 +135,20 @@
       $a$. Let $(b_n)$ be a subsequence of $(a_{n_k})$ without the term $a$ if
       it exists. It follows that $(b_n) \to a$, so $a$ is a limit point.
     \item Consider the set $\Q \cap [0, 1]$.
-    \item TODO
+    \item Such a set cannot exist. Suppose $A$ has an uncountable number of
+      isolated points. For every isolated point $x \in A$, there exists
+      an $\epsilon_x > 0$ such that $V_{\epsilon_x}(x) \cap A = \{x\}$. Each
+      neighborhood $V_{\epsilon_x}(x)$ can intersect with at most 2 other
+      neighborhoods, since if a neighborhood intersects with more than 2
+      neighborhoods, then one of the three neighborhoods in question  would
+      intersect another isolated point in $A$, which is not possible. By the
+      Density of $\Q$ in $\R$, we can choose a rational number $r$ in each
+      neighborhood. Since each neighborhood intersects with at most 2 other
+      neighborhoods, the same $r$ can be chosen for at most 3 neighborhoods.
+      Regardless, we are still have uncountably many rational numbers since each
+      rational number $r$ corresponds to at most 3 neighborhoods and we have
+      uncountably many neighborhoods. This is a contradiction since $\Q$ is
+      countable.
   \end{enumerate}
 \end{exercise}
 
@@ -163,7 +176,7 @@
       \begin{align*}
         x \in \overline{E}^c &\iff x \in {(E \cup L)}^c \\
         &\iff x \in E^c \cap L^c\ \text{(by DeMorgan's Laws)} \\
-        &\iff x \in E^c \wedge x\ \text{is an isolated point} \\
+        &\iff x \in E^c \wedge x\ \text{is not a limit point of E} \\
         &\iff x \in E^c\ \text{s.t.}\ \exists V_\epsilon(x) \subseteq E^c \\
         &\iff x \in {(E^c)}^\circ.
       \end{align*}

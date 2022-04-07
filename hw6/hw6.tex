@@ -159,7 +159,19 @@
 \end{exercise}
 
 \begin{exercise}[3.2.13]
-  TODO
+  Suppose $A$ is an open and closed set such that $A \subset \R$ and $A \neq
+  \emptyset$. Thus, there exists $x_0 \in A$ and $x_1 \notin A$. Without loss of
+  generality, suppose $x_0 < x_1$. Consider the closed interval $I = [x_0,
+  x_1]$. $A$ and $I$ are closed, so $A \cap I$ is closed as well since the
+  intersection of an arbitrary collection of closed sets is closed. Since $A
+  \cap I$ is nonempty and bounded above, it has a supremum $s = \sup(A \cap I)$
+  by Axiom of Completeness. It follows that $s \in I \cap A \subseteq A$ because
+  $A \cap I$ is closed. Since $A$ is also open, there exists $V_\epsilon(s)
+  \subseteq A$. We also know that $[s, x_1] \subseteq I$. Choose $\epsilon_1 <
+  \min\{\epsilon, x_1\}$. It follows that $s + \epsilon_1 \in A$ and $s +
+  \epsilon_1 \in I$, so $s + \epsilon_1 \in A \cap I$. This is a contradiction
+  since we assumed that $s = \sup(A \cap I)$. Therefore, the only sets that are
+  both open and closed are $\R$ and $\emptyset$.
 \end{exercise}
 
 \begin{exercise}[3.2.14]

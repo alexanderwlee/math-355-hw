@@ -1,0 +1,56 @@
+\documentclass{amsart}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert} % absolute value
+% Swap the definition of \abs*, so that \abs
+% resizes the size of the bars, and the starred version does not.
+\makeatletter
+\let\oldabs\abs%
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+\makeatother
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\card}[1]{\abs{#1}}
+\newcommand{\st}{\mathrel{:}}
+
+\title{MATH 355: Homework 7}
+\author{Alexander Lee}
+
+\begin{document}
+
+\maketitle
+
+\begin{exercise}[3.3.1]
+\end{exercise}
+
+\begin{exercise}[3.3.2, except (c)]
+\end{exercise}
+
+\begin{exercise}[3.3.4]
+\end{exercise}
+
+\begin{exercise}[3.3.5]
+\end{exercise}
+
+\begin{exercise}[3.3.11]
+\end{exercise}
+
+\begin{exercise}[4.2.2]
+\end{exercise}
+
+\begin{exercise}[4.2.5]
+\end{exercise}
+
+\begin{exercise}[4.2.6]
+\end{exercise}
+
+\end{document}

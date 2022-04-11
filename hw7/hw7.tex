@@ -30,18 +30,61 @@
 \maketitle
 
 \begin{exercise}[3.3.1]
+  Since $K$ is compact, it is closed and bounded. It follows from the Axiom of
+  Completeness that because $K$ is nonempty and bounded (above and below),
+  $\sup(K)$ and $\inf(K)$ both exist. Since $K$ is closed, $K = \overline{K}$,
+  so $\sup(K) \in \overline{K} = K$ by Exercise 3.2.4 (a). By similar reasoning,
+  it follows that $\inf(K) \in K$.
 \end{exercise}
 
 \begin{exercise}[3.3.2, except (c)]
+  \begin{enumerate}[label={(\alph*)}]
+    \item Not compact. Consider the sequence $(a_n)$ where $a_n = n$.
+    \item Not compact. We can construct a sequence $(a_n)$ that converges to $1
+      / \sqrt{2} \notin \Q \cap [0, 1]$. All subsequences of $(a_n)$ must also
+      converge to $1 / \sqrt{2}$.
+    \addtocounter{enumi}{1}
+    \item Not compact. Consider the sequence of partial sums $(s_m)$ where $s_m
+      = \sum_{n=1}^m 1 / n^2$.
+    \item Compact. The set is closed since 1 is its only limit point, which is
+      contained in the set, and the set is also bounded.
+  \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[3.3.4]
+  \begin{enumerate}[label={(\alph*)}]
+    \item The set is definitely closed since $K$ is compact and thus closed,
+      and the intersection of an arbitrary collection of closed sets is closed.
+      The set is definitely compact since $K \cap F$ is closed as explained
+      previously and is bounded because $K$ is bounded.
+    \item The set is definitely closed since the closure of any set is closed.
+      The set is not definitely compact.
+    \item Neither.
+    \item The set is definitely closed since the closure of any set is closed.
+      The set is definitely compact since it is closed as explained previously
+      and is bounded since $K \cap F^c$ is bounded and the closure of a bounded
+      set is also bounded.
+  \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[3.3.5]
+  \begin{enumerate}[label={(\alph*)}]
+    \item True. The arbitrary intersection of compact sets is closed since each
+      compact set is closed and the arbitrary intersection of closed sets is
+      closed. The arbitrary intersection of compact sets is bounded since each
+      compact set is bounded and the intersection of bounded sets must be
+      bounded.
+    \item False. Consider $\cup_{n=1}^\infty [n, n+1]$. This union of compact
+      sets is unbounded, and thus not compact.
+    \item False. Consider $A = (0, 1)$ and $K = [0, 1]$. $A \cap K = (0, 1)$ is
+      open, and thus not compact.
+    \item False. Consider $\cap_{n=1}^\infty \lbrack n, \infty \rparen =
+      \emptyset$.
+  \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[3.3.11]
+  $\N$: consider the open cover $\{V_1(n) \st n \in \N\}$.
 \end{exercise}
 
 \begin{exercise}[4.2.2]

@@ -85,12 +85,66 @@
 
 \begin{exercise}[3.3.11]
   $\N$: consider the open cover $\{V_1(n) \st n \in \N\}$.
+
+  $\Q \cap [0, 1]$: consider the open cover TODO
+
+  $\{1 + 1/2^2 + 1/3^2 + \cdots + 1/n^2 \st n \in \N\}$: consider the open cover
+  TODO
 \end{exercise}
 
 \begin{exercise}[4.2.2]
+  \begin{enumerate}[label={(\alph*)}]
+    \item TODO
+    \item TODO
+    \item TODO
+    \item TODO
+  \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[4.2.5]
+  \begin{enumerate}[label={(\alph*)}]
+    \item Let $\epsilon > 0$. Notice that
+      \[
+        \abs{3x + 4 - 10} = \abs{3x + 6} = 3 \abs{x - 2}.
+      \]
+      Thus, if we choose $\delta = \epsilon / 3$, then $0 < \abs{x - 2} <
+      \delta$ implies $\abs{3x + 4 - 10} < 3 (\epsilon / 3) = \epsilon$.
+    \item Let $\epsilon > 0$. Notice that
+      \[
+        \abs{x^3 - 0} = \abs{x^3} = x^2 \abs{x}.
+      \]
+      Choose a $\delta$-neighborhood around $c = 0$ to with radius no bigger
+      than $\delta = 1$. Then, we get the upper bound $x^2 \le 1$ for all $x \in
+      V_\delta(c)$. Now, choose $\delta = \min\{1, \epsilon\}$. If $0 < \abs{x -
+      0} < \delta$, then it follows that
+      \[
+        \abs{x^3 - 0} = x^2 \abs{x} < 1 (\epsilon) = \epsilon.
+      \]
+    \item Let $\epsilon > 0$. Notice that
+      \[
+        \abs{x^2 + x - 1 - 5} = \abs{x^2 + x - 6} = \abs{x + 3} \abs{x - 2}.
+      \]
+      Choose a $\delta$-neighborhood around $c = 2$ with radius no bigger than
+      $\delta = 1$. Then, we get the upper bound $\abs{x + 3} \ge \abs{3 + 3} =
+      6$ for all $x \in V_\delta(c)$. Now, choose $\delta = \min\{1, \epsilon /
+      6\}$. If $0 < \abs{x - 2} < \delta$, then it follows that
+      \[
+        \abs{x^3 + x - 1 - 5} = \abs{x + 3} \abs{x - 2} < 6 (\epsilon / 6) =
+        \epsilon.
+      \]
+    \item Let $\epsilon > 0$. Notice that
+      \[
+        \abs{1/x - 1/3} = \abs{\frac{3 - x}{3x}} = \frac{\abs{3 - x}}{\abs{3x}}.
+      \]
+      Choose a $\delta$-neighborhood around $c = 3$ with radius no bigger than
+      $\delta = 1$. Then, we get the lower bound $\abs{3x} \ge \abs{3 \cdot 2} =
+      6$. Now, choose $\delta = \min\{1, 6 / \epsilon\}$. If $0 < \abs{x - 3} <
+      \delta$, then it follows that
+      \[
+        \abs{1/x - 1/3} = \frac{\abs{3 - x}}{\abs{3x}} < \frac{6}{\epsilon}
+        \cdot \frac{1}{6} = \epsilon.
+      \]
+  \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[4.2.6]

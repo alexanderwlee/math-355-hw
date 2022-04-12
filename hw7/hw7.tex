@@ -148,6 +148,21 @@
 \end{exercise}
 
 \begin{exercise}[4.2.6]
+  \begin{enumerate}[label={(\alph*)}]
+    \item True. If a particular $\delta$ has been constructed as a suitable
+      response to a particular $\epsilon$ challenge, then we know that for all
+      $x \in V_\delta(c)$ different from $c$ (with $x \in A$) it follows that
+      $f(x) \in V_\epsilon(L)$. Therefore, any smaller positive $\delta$ will
+      also suffice since all $x$'s will still be in the $\delta$-neighborhood.
+    \item True. TODO
+    \item True. Given $\lim_{x \to a} f(x) = L$, we have that
+      \[
+        \lim_{x \to a} 3{[f(x) - 2]}^2 = 3{[\lim_{x \to a} f(x) - 2]}^2 = 3{(L -
+        2)}^2
+      \]
+      by the Algebraic Limit Theorem for Functional Limits.
+    \item False. $\lim_{x \to a} g(x)$ may not exist.
+  \end{enumerate}
 \end{exercise}
 
 \end{document}

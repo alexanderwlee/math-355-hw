@@ -84,20 +84,69 @@
 \end{exercise}
 
 \begin{exercise}[3.3.11]
-  $\N$: consider the open cover $\{V_1(n) \st n \in \N\}$.
-
-  $\Q \cap [0, 1]$: consider the open cover TODO
-
-  $\{1 + 1/2^2 + 1/3^2 + \cdots + 1/n^2 \st n \in \N\}$: consider the open cover
-  TODO
+  \begin{itemize}
+    \item $\N$: Consider the open cover $\{V_1(n) \st n \in \N\}$.
+    \item $\Q \cap [0, 1]$: Let $(a_n)$ be a sequence of increasing irrational
+      numbers such that $(a_n) \to 1 / \sqrt{2}$ and $a_1 = -1 / \sqrt{2}$. Now,
+      consider the open cover $\{(a_n, a_{n+1}) \st n \in \N\} \cup \{(1 /
+      \sqrt{2}, 2)\}$.
+    \item $\{1 + 1/2^2 + 1/3^2 + \cdots + 1/n^2 \st n \in \N\}$: Let $(s_n)$ be
+      the sequence of partial sums $s_n = 1 + 1/2^2 + 1/3^2 + \cdots + 1/n^2$.
+      Now, consider the open cover $\{(\frac{s_{n-1} + s_{n}}{2}, \frac{s_n +
+      s_{n+1}}{2}) \st n \in \N\}$, where $s_0$ is defined as $0$.
+  \end{itemize}
 \end{exercise}
 
 \begin{exercise}[4.2.2]
   \begin{enumerate}[label={(\alph*)}]
-    \item TODO
-    \item TODO
-    \item TODO
-    \item TODO
+    \item Notice that
+      \begin{align*}
+        \abs{(5x - 6) - 9} < 1 &\implies \abs{5x - 15} < 1 \\
+        &\implies 5 \abs{x - 3} < 1 \\
+        &\implies \abs{x - 3} 1/5 \\
+        &\implies -1/5 < x - 3 < 1/5 \\
+        &\implies 14/5 < x < 16/5.
+      \end{align*}
+      Thus, if $x \in (14/5, 16/5)$, then $5x - 6 \in (8, 10)$. It follows that
+      \begin{align*}
+        \delta &= \min\{\abs{14/5 - 3}, \abs{16/5 - 3}\} \\
+        &= \min\{1/5, 1/5\} \\
+        &= 1/5.
+      \end{align*}
+    \item Notice that
+      \begin{align*}
+        \abs{\sqrt{x} - 2} < 1 &\implies -1 < \sqrt{x} - 2 < 1 \\
+        &\implies 1 < \sqrt{x} < 3 \\
+        &\implies 1 < x < 9.
+      \end{align*}
+      Thus, if $x \in (1, 9)$, then $\sqrt{x} \in (1, 3)$. It follows that
+      \begin{align*}
+        \delta &= \min\{\abs{1 - 4}, \abs{9 - 4}\} \\
+        &= \min\{3, 5\} \\
+        &= 3.
+      \end{align*}
+    \item Notice that
+      \begin{align*}
+        \abs{[[x]] - 3} < 1 &\implies -1 < [[x]] - 3 < 1 \\
+        &\implies 2 < [[x]] < 4 \\
+        &\implies 3 < x < 5 \\
+      \end{align*}
+      Thus, if $x \in (3, 5)$, then $[[x]] \in (2, 4)$. It follows that
+      \begin{align*}
+        \delta &= \min\{\abs{3 - \pi}, \abs{5 - \pi}\} \\
+        &= \pi - 3.
+      \end{align*}
+    \item Notice that
+      \begin{align*}
+        \abs{[[x]] - 3} < 0.01 &\implies -0.01 < [[x]] - 3 < 0.01 \\
+        &\implies 2.99 < [[x]] < 3.01 \\
+        &\implies 3 < x < 4.
+      \end{align*}
+      Thus, if $x \in (3, 4)$, then $[[x]] \in (2.99, 3.01)$. It follows that
+      \begin{align*}
+        \delta &= \min\{\abs{3 - \pi}, \abs{4 - \pi}\} \\
+        &= \pi - 3.
+      \end{align*}
   \end{enumerate}
 \end{exercise}
 
@@ -154,14 +203,24 @@
       $x \in V_\delta(c)$ different from $c$ (with $x \in A$) it follows that
       $f(x) \in V_\epsilon(L)$. Therefore, any smaller positive $\delta$ will
       also suffice since all $x$'s will still be in the $\delta$-neighborhood.
-    \item True. TODO
+    \item False. Let $a \in \R$ and consider $f : \R \to \R$ such that
+      \[
+        f(x) =
+        \begin{cases}
+          x & \text{if $x \neq a$} \\
+          x + 1 & \text{if $x = a$}
+        \end{cases}.
+      \]
+      $\lim_{x \to a} f(x) = a$, however $a \neq f(a) = a + 1$.
     \item True. Given $\lim_{x \to a} f(x) = L$, we have that
       \[
         \lim_{x \to a} 3{[f(x) - 2]}^2 = 3{[\lim_{x \to a} f(x) - 2]}^2 = 3{(L -
         2)}^2
       \]
       by the Algebraic Limit Theorem for Functional Limits.
-    \item False. $\lim_{x \to a} g(x)$ may not exist.
+    \item False. Let $a = 0$ and consider $f, g : \R \to \R$ such that $f(x) =
+      x$ and $g(x) = 1/x$. Notice that $\lim_{x \to a} f(x) = 0$, but $\lim_{x
+      \to a} f(x) g(x) = \lim_{x \to a} 1 = 1 \neq 0$ when $x \neq 0$.
   \end{enumerate}
 \end{exercise}
 

@@ -1,0 +1,95 @@
+\documentclass{amsart}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert} % absolute value
+% Swap the definition of \abs*, so that \abs
+% resizes the size of the bars, and the starred version does not.
+\makeatletter
+\let\oldabs\abs%
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+\makeatother
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\card}[1]{\abs{#1}}
+\newcommand{\st}{\mathrel{:}}
+
+\title{MATH 355: Homework 8}
+\author{Alexander Lee}
+
+\begin{document}
+
+\maketitle
+
+\begin{exercise}[4.2.10]
+  \begin{enumerate}[label={(\alph*)}]
+    \item (Right-hand limit) Let $f : A \to \R$, and let $A$ be a limit point of
+      the domain $A$. We say that $\lim_{x \to a^+} f(x) = L$ provided that, for
+      all $\epsilon > 0$, there exists a $\delta > 0$ such that whenever $0 < a
+      - x < \delta$ (and $x \in A$) it follows that $\abs{f(x) - L} < \epsilon$.
+
+      (Left-hand limit) Let $f : A \to \R$, and let $A$ be a limit point of the
+      domain $A$. We say that $\lim_{x \to a^-} f(x) = M$ provided that, for all
+      $\epsilon > 0$, there exists a $\delta > 0$ such that whenever $0 < x - a
+      < \delta$ (and $x \in A$) it follows that $\abs{f(x) - M} < \epsilon$.
+    \item ($\implies$) Suppose that $\lim_{x \to a} f(x) = L$. By the definition
+      of a functional limit, for all $\epsilon > 0$, there exists a $\delta > 0$
+      such that whenever $0 < \abs{x - c} < \delta$ (and $x \in A$) it follows
+      that $\abs{f(x) - L} < \epsilon$. Thus, for this chosen $\delta$, we have
+      that $0 < c - x < \delta$ (and $x \in A$) implies $\abs{f(x) - L} <
+      \epsilon$, and $0 < x - c < \delta$ (and $x \in A$) implies $\abs{f(x) -
+      L} < \epsilon$. Therefore, $\lim_{x \to c^+} f(x) = \lim_{x \to c^-} f(x)
+      = L$ (i.e., both the right and left-hand limits equal $L$).
+
+      ($\impliedby$) Suppose $\lim_{x \to c^+} f(x) = \lim_{x \to c^-} f(x) =
+      L$. Since we have that $\lim_{x \to c^+} f(x) = L$, for all $\epsilon >
+      0$, there exists a $\delta_1 > 0$ such that $0 < c - x < \delta_1$ (and $x
+      \in A$) implies $\abs{f(x) - L} < \epsilon$. Similarly, since we have that
+      $\lim_{x \to c^-} f(x) = L$, for all $\epsilon > 0$, there exists a
+      $\delta_2 > 0$ such that $0 < x - c < \delta_2$ (and $x \in A$) implies
+      $\abs{f(x) - L} < \epsilon$. Let $\delta = \min\{\delta_1, \delta_2\}$.
+      Thus, for all $\epsilon > 0$, we have that $0 < c - x < \delta \le
+      \delta_1$ (and $x \in A$) implies $\abs{f(x) - L} < \epsilon$ and $0 < x -
+      c < \delta \le \delta_2$ (and $x \in A$) implies $\abs{f(x) - L} <
+      \epsilon$. It follows immediately that $0 < \abs{x - c} < \delta$ (and $x
+      \in A$) implies $\abs{f(x) - L} < \epsilon$. Therefore, $\lim_{x \to a}
+      f(x) = L$.
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}[4.2.11]
+  Since $\lim_{x \to c} f(x) = L$ and $\lim_{x \to c} h(x) = L$, by the
+  Sequential Criterion for Functional Limits, we know that for all sequences
+  $(x_n) \subseteq A$ satisfying $x_n \neq c$ and $\lim x_n = c$, it follows
+  that $\lim f(x_n) = L$ and $\lim h(x_n) = L$. By assumption, we have $f(x_n)
+  \le g(x_n) \le h(x_n)$. Applying the Squeeze Theorem for sequences, it follows
+  that $\lim g(x_n) = L$, implying that $\lim_{x \to c} g(x) = L$ as well.
+\end{exercise}
+
+\begin{exercise}[4.3.2]
+\end{exercise}
+
+\begin{exercise}[4.3.5]
+\end{exercise}
+
+\begin{exercise}[4.3.6]
+\end{exercise}
+
+\begin{exercise}[4.3.8]
+\end{exercise}
+
+\begin{exercise}[4.4.11]
+\end{exercise}
+
+\begin{exercise}[4.4.12]
+\end{exercise}
+
+\end{document}

@@ -162,6 +162,28 @@
 \end{exercise}
 
 \begin{exercise}[4.3.8]
+  \begin{enumerate}[label={(\alph*)}]
+    \item True. Observe that $g$ is continuous at 1. Let $x_n = 1 -
+      \frac{1}{n}$. Clearly, $(x_n) \to 1$. By the Characterizations of
+      Continuity, it follows that $g(x_n) \to g(1)$. Since $g(x_n) \ge 0$ for
+      all $n \in \N$, we also have $g(1) \ge 0$ by the Order Limit Theorem.
+    \item True. Given $x \in \R$, there exists a sequence of rational numbers
+      $(r_n)$ such that $(r_n) \to x$, by the Density of $\Q$ in $\R$. Since $g$
+      is continuous at $x$, the Characterizations of Continuity says that
+      $g(r_n) \to g(x)$. However, $g(r_n) = 0$ for all $n \in \N$. Therefore,
+      $g(x) = 0$.
+    \item True. Let $c = g(x_0) > 0$. Since $g$ is continuous at $x_0$, there
+      exists a $\delta > 0$ such that $\abs{x - x_0} < \delta$ implies
+      $\abs{g(x) - g(x_0)} < c$. Thus, whenever $\abs{x - x_0} < \delta$, it
+      follows that
+      \begin{align*}
+        \abs{g(x) - g(x_0) < c} &\implies -c < g(x) - g(x_0) < c \\
+        &\implies -c < g(x) -c < c \\
+        &\implies 0 < g(x) < 2c
+      \end{align*}
+      Thus, for all $x \in V_\delta(x_0)$, we have that $g(x) > 0$. Observe that
+      there are uncountably many points in $V_\delta(x_0)$.
+  \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[4.4.11]

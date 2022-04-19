@@ -75,12 +75,90 @@
 \end{exercise}
 
 \begin{exercise}[4.3.2]
+  \begin{enumerate}[label={(\alph*)}]
+    \item Consider the function $f(x) = k$, for some $k \in \R$.
+    \item Consider the function $f(x) = x$.
+    \item Consider the function $f(x) = 2x$.
+    \item Every lesstinuous function is continuous, since choosing $0 < \delta <
+      \epsilon$ implies choosing a $\delta > 0$. Every continuous function is
+      also lesstinuous, since if we choose a $\delta$, where $0 < \epsilon \le
+      \delta$, which satisfies the definition for continuity, we can choose a
+      $\delta'$ such that $0 < \delta' < \epsilon \le \delta$.
+  \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[4.3.5]
+  Suppose $c$ is an isolated point of $A \subseteq \R$. Let $\epsilon > 0$ be
+  arbitrary. Since $c$ is an isolated point, there exists a
+  $\delta$-neighborhood $V_\delta(c)$ of $c$ that only intersects $A$ at $c$.
+  That is, there exists a $\delta > 0$ such that the only $x \in A$ where
+  $\abs{x - c} < \delta$ is $x = c$. Thus, with the chosen $\delta$, whenever
+  $\abs{x - c} < \delta$, it follows that $\abs{f(x) - f(c)} = \abs{f(c) - f(c)}
+  = 0 < \epsilon$.
 \end{exercise}
 
 \begin{exercise}[4.3.6]
+  \begin{enumerate}[label={(\alph*)}]
+    \item Consider functions
+      \[
+        f(x) =
+        \begin{cases}
+          x + 1 & \text{if}\ x \neq 0 \\
+          0 & \text{if}\ x = 0
+        \end{cases}
+        \quad \text{and} \quad
+        g(x) =
+        \begin{cases}
+          0 & \text{if}\ x \neq 0 \\
+          1 & \text{if}\ x = 0
+        \end{cases},
+      \]
+      neither of which is continuous at 0.
+      We have that $f(x) g(x) = 0$ and $f(x) + g(x) = x + 1$, both of which are
+      continuous at 0.
+    \item Impossible. Given that $f(x)$ and $f(x) + g(x)$ are continuous at
+      0, $g(x) = [f(x) + g(x)] - f(x)$ must also be continuous at 0 by the
+      Algebraic Continuity Theorem.
+    \item Consider functions
+      \[
+        f(x) = x
+        \quad \text{and} \quad
+        g(x) =
+        \begin{cases}
+          0 & \text{if}\ x \neq 0 \\
+          1 & \text{if}\ x = 0
+        \end{cases}.
+      \]
+      Observe that $f(x)$ is continuous at 0 and $g(x)$ is not continuous at 0.
+      However, we have that $f(x) g(x) = 0$, which is continuous at 0.
+    \item Consider the function
+      \[
+        f(x) =
+        \begin{cases}
+          2 + \sqrt{3} & \text{if}\ x \neq 0 \\
+          2 - \sqrt{3} & \text{if}\ x = 0
+        \end{cases},
+      \]
+      which is not continuous at 0. When $x \neq 0$, it holds that
+      \begin{align*}
+        f(x) + \frac{1}{f(x)} &= 2 + \sqrt{3} + \frac{1}{2 + \sqrt{3}} \\
+        &= 2 + \sqrt{3} + \frac{1}{2 + \sqrt{3}} \cdot \frac{2 - \sqrt{3}}{2 -
+        \sqrt{3}} \\
+        &= 2 + \sqrt{3} + 2 - \sqrt{3} \\
+        &= 4.
+      \end{align*}
+      Similarly, when $x = 0$, it holds that
+      \begin{align*}
+        f(x) + \frac{1}{f(x)} &= 2 - \sqrt{3} + \frac{1}{2 - \sqrt{3}} \\
+        &= 2 - \sqrt{3} + \frac{1}{2 - \sqrt{3}} \cdot \frac{2 + \sqrt{3}}{2 +
+        \sqrt{3}} \\
+        &= 2 - \sqrt{3} + 2 + \sqrt{3} \\
+        &= 4.
+      \end{align*}
+      Therefore, we have that $f(x) + \frac{1}{f(x)} = 4$, which is continuous
+      at 0.
+    \item TODO
+  \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[4.3.8]

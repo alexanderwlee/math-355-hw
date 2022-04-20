@@ -188,6 +188,19 @@
 \end{exercise}
 
 \begin{exercise}[4.4.11]
+  ($\implies$) Given $c \in g^{-1}(O)$, it follows that $g(c) \in O$. Because
+  $O$ is open, there exists a $\epsilon > 0$ such that $V_\epsilon(g(c))
+  \subseteq O$. Given this $\epsilon$ and the fact that $g$ is continuous at
+  $c$, we know there exists a neighborhood $V_\delta(c)$ with the property that
+  $x \in V_\delta(c)$ implies $g(x) \in V_\epsilon(f(c)) \subseteq O$. This
+  implies that $V_\delta(c) \subseteq g^{-1}(O)$, proving that $g^{-1}(O)$ is
+  open.
+
+  ($\impliedby$) Let $c \in \R$, $\epsilon > 0$, and set $O = V_\epsilon(g(c))$.
+  Since $O$ is open, $g^{-1}(O)$ is open by assumption. Because $c \in
+  g^{-1}(O)$, it follows that there exists a neighborhood $V_\delta(c) \subseteq
+  g^{-1}(O)$. That is, for every $x \in V_\delta(c)$, we have that $g(x) \in O =
+  V_\epsilon(g(c))$. Therefore $g$ is continuous.
 \end{exercise}
 
 \begin{exercise}[4.4.12]

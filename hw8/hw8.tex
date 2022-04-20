@@ -204,6 +204,26 @@
 \end{exercise}
 
 \begin{exercise}[4.4.12]
+  \begin{enumerate}[label={(\alph*)}]
+    \item False. Consider $B = \{1\}$ and $f : \R \to B$, where $f(x) = 1$. In
+      this case, $B$ is finite but $f^{-1}(B) = \R$ is not finite.
+    \item False. Consider $K = \{1\}$ and $f : \R \to K$, where $f(x) = 1$. In
+      this case, $K$ is compact but $f^{-1}(K) = \R$ is not compact.
+    \item False. Consider $A = \{1\}$ and $f : \R to A$, where $f(x) = 1$. In
+      this case, $A$ is bounded, but $f^{-1}(A) = \R$ is not bounded.
+    \item True. We want to show that $f^{-1}(F)$ is closed whenever $F$ is
+      closed. To do so, we show that ${f^{-1}(F)}^c$ is open whenever $F$ is
+      closed. First, we show that ${f^{-1}(F)}^c = f^{-1}(F^c)$. Consider
+      \begin{align*}
+        a \in {f^{-1}(F)}^c &\iff a \notin f^{-1}(F) \\
+        &\iff f(a) \notin F \\
+        &\iff f(a) \in F^c \\
+        &\iff a \in f^{-1}(F^c).
+      \end{align*}
+      Therefore, ${f^{-1}(F)}^c = f^{-1}(F^c)$. Since $F$ is assumed to be
+      closed, we know that $F^c$ is open. Thus, By Exercise 4.4.11,
+      ${f^{-1}(F)}^c = f^{-1}(F^c)$ is also open since $f$ is continuous.
+  \end{enumerate}
 \end{exercise}
 
 \end{document}

@@ -30,12 +30,77 @@
 \maketitle
 
 \begin{exercise}[4.4.1]
+  \begin{enumerate}[label={(\alph*)}]
+    \item Given $c \in \R$, we have
+      \[
+        \abs{f(x) - f(c)} = \abs{x^3 - c^3} = \abs{x - c} \abs{x^2 + xc + c^2}.
+      \]
+      Choosing $\delta \le 1$, we thus have $x \in (c - 1, c + 1)$. Hence,
+      \[
+        \abs{x^2 + xc + c^2} < {(c + 1)}^2 + {(c + 1)}^2 + c^2 < 3{(c + 1)}^2.
+      \]
+      Now, let $\delta = \min\{1, \epsilon / {(3(c+1))}^2\}$. Then, $\abs{x - c}
+      < \delta$ implies
+      \[
+        \abs{f(x) - f(c)} < \left(\frac{\epsilon}{3 {(c + 1)}^2}\right) 3{(c +
+        1)}^2 = \epsilon.
+      \]
+    \item Choose $x_n = n$ and $y_n = n + 1/n$. Observe that $\abs{x_n - y_n} =
+      1/n \to 0$ and
+      \[
+        \abs{f(x_n) - f(y_n)} = \abs{n^3 - {\left(n + \frac{1}{n}\right)}^3} =
+        3n + \frac{3}{n} + \frac{1}{n^3} \ge 3.
+      \]
+    \item Suppose $A$ is bounded by $M$. Given $x, c \in A$, we have that
+      $\abs{x^2 + xc + c^2} \le 3M^2$. For any $\epsilon > 0$, we can choose
+      $\delta = \epsilon / {(3M)}^2$. If $\abs{x - c} < \delta$, it follows that
+      \[
+        \abs{f(x) - f(c)} < \left(\frac{\epsilon}{3M^2}\right) 3M^2 = \epsilon.
+      \]
+  \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[4.4.3]
+  Observe that
+  \[
+    \abs{f(x) - f(y)} = \abs{\frac{1}{x^2} - \frac{1}{y^2}} = \abs{\frac{y^2 -
+    x^2}{x^2 y^2}} = \abs{y - x} \left(\frac{y + x}{x^2 y^2}\right).
+  \]
+
+  If $x, y \in \lbrack 1, \infty \rparen$, then we have
+  \[
+    \frac{y + x}{x^2 y^2} = \frac{1}{x^2 y} + \frac{1}{x y^2} \le 1 + 1 = 2.
+  \]
+  Given $\epsilon > 0$, let $\delta = \epsilon / 2$ and it follows that
+  $\abs{f(x) - f(y)} < (\epsilon / 2) 2 = \epsilon$ whenever $\abs{x - y} <
+  \delta$. Therefore, $f$ is uniformly continuous on $\lbrack 1, \infty
+  \rparen$.
+
+  If $x, y \in \lparen 0, 1 \rbrack$, then set $x_n = 1 / \sqrt{n}$ and $y_n =
+  1 / \sqrt{n + 1}$. Then, $\abs{x_n - y_n} \to 0$ and
+  \[
+    \abs{f(x_n) - f(y_n)} = \abs{n - (n + 1)} = 1.
+  \]
+  By the Sequential Criterion for Absence of Uniform Continuity, $f$ is not
+  continuous on $\lparen 0, 1 \rbrack$.
 \end{exercise}
 
 \begin{exercise}[4.4.7]
+  We first show that $f(x) = \sqrt{x}$ is uniformly continuous on $\lbrack 1,
+  \infty \rparen$. Let $x, y \in \lbrack 1, \infty \rparen$. It follows that
+  \[
+    \abs{f(x) - f(y)} = \abs{\sqrt{x} - \sqrt{y}} = \abs{\frac{x - y}{\sqrt{x}
+    + \sqrt{y}}} \le \abs{x - y} \frac{1}{2}.
+  \]
+  Given $\epsilon > 0$, let $\delta = 2 \epsilon$. It follows that $\abs{f(x) -
+  f(y)} < (2 \epsilon) \frac{1}{2} = \epsilon$ whenever $\abs{x - y} < \delta$.
+  Thus, $f(x) = \sqrt{x}$ is uniformly continuous on $\lbrack 1, \infty
+  \rparen$.
+
+  We also know that $f(x) = \sqrt{x}$ is continuous on $[0, 1]$ and $[0, 1]$ is
+  a compact set, so $f$ is also uniformly continuous on $[0, 1]$. By Exercise
+  4.4.5, we thus conclude that $f$ is uniformly continuous on $\lbrack 0, \infty
+  \rparen$.
 \end{exercise}
 
 \begin{exercise}[4.5.2]

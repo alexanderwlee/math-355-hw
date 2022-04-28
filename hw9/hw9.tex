@@ -104,18 +104,94 @@
 \end{exercise}
 
 \begin{exercise}[4.5.2]
+  \begin{enumerate}[label={(\alph*)}]
+    \item Consider
+      \[
+        f(x) =
+        \begin{cases}
+          -1 & x \in (-2, -1) \\
+          x & x \in [-1, 1] \\
+          1 & x \in (1, 2)
+        \end{cases}.
+      \]
+      Observe that $f$ is continuous on the open interval $(-2, 2)$ and has
+      range equal to the closed interval $[-1, 1]$.
+    \item Impossible. If a continuous function is defined a closed interval,
+      then the continuous function is defined on a compact set. By the
+      Preservation of Compact Sets, the range must also be compact and thus
+      cannot be an open interval.
+    \item Consider
+      \[
+        f(x) =
+        \begin{cases}
+          1/x & x \in (0, 1) \\
+          1 & x \in \lbrack 1, 2 \rparen
+        \end{cases}.
+      \]
+      Observe that $f$ is continuous on the open interval $(0, 2)$ with range
+      equal to the unbounded closed set $\lbrack 1, \infty \rparen \neq \R$.
+    \item Impossible. Suppose towards a contradiction that $f$ is a continuous
+      function defined on all of $\R$ with range equal to $\Q$. Then, there
+      exists $a, b \in \R$ such that $f(a), f(b) \in \Q$. Without loss of
+      generality, suppose $a < b$ and  $f(a) < f(b)$. By the Density of
+      Irrationals in $\R$, there exists an irrational number $L$ such that $f(a)
+      < L < f(b)$. By the Intermediate Value Theorem, there exists a point $c
+      \in (a, b)$ where $f(c) = L$, which contradicts our assumption that $f$
+      has range equal to $\Q$.
+  \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[4.5.4]
+  If $g$ is one-to-one, there are no points where $g$ fails to be one-to-one.
+  Thus, $F$ is empty in this case.
+
+  If $g$ is not one-to-one, then there exist points $x, y \in A$, $x \neq y$,
+  such that $f(x) = f(y)$. Without loss of generality, suppose $x < y$. If $f$
+  is the constant function, we are done. Otherwise, choose $z \in (x, y)$ such
+  that $f(z) \neq f(x)$. Without loss of generality, suppose $f(x) < f(z)$. By
+  the Intermediate Value Theorem, for all $L \in (f(x), f(z))$, there exists a
+  point $c_1 \in (x, z)$ where $f(c_1) = L$. Similarly, for all $L \in (f(x),
+  f(z))$, there exists a point $c_2 \in (z, y)$ where $f(c_2) = L$. Therefore,
+  for all $c_1 \in (x, z)$, there exists $c_2 \in (z, y)$ such that $f(c_1) =
+  f(c_2)$. Since $(z, y)$ is countable, $F$ is uncountable as well.
 \end{exercise}
 
 \begin{exercise}[4.5.7]
+  TODO
 \end{exercise}
 
 \begin{exercise}[5.2.2]
+  \begin{enumerate}[label={(\alph*)}]
+    \item Consider $f(x) = g(x) = \abs{x}$. Clearly, $f$ and $g$ are not
+      differentiable at zero. However, $(fg)(x) = \abs{x} \cdot \abs{x} = x^2$,
+      which is differentiable at zero.
+    \item TODO
+    \item Impossible. Given that $g$ and $f + g$ are differentiable at zero, $f
+      = (f + g) - g$ is also differentiable at zero by the Algebraic
+      Differentiability Theorem.
+    \item TODO
+  \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[5.2.6]
+  \begin{enumerate}[label={(\alph*)}]
+    \item The new definition replaces $x$ from Definition 5.2.1 with $c + h$.
+    \item
+      \begin{align*}
+        \lim_{h \to 0} \frac{g(c + h) - g(c - h)}{2h} &= \frac{1}{2} \left(
+        \lim_{h \to 0} \frac{g(c + h) - g(c) + g(c) - g(c - h)}{h} \right) \\
+        &= \frac{1}{2} \left( \lim_{h \to 0} \frac{g(c + h) - g(c)}{h} + \lim_{h
+        \to 0} \frac{g(c) - g(c - h)}{h} \right) \\
+        &= \frac{1}{2} \left( \lim_{h \to 0} \frac{g(c + h) - g(c)}{h} + \lim_{x
+        \to c} \frac{g(c) - g(c - (c - x))}{c - x} \right) \\
+        &= \frac{1}{2} \left( \lim_{h \to 0} \frac{g(c + h) - g(c)}{h} + \lim_{x
+        \to c} \frac{g(c) - g(x)}{c - x} \right) \\
+        &= \frac{1}{2} \left( \lim_{h \to 0} \frac{g(c + h) - g(c)}{h} + \lim_{x
+        \to c} \frac{g(x) - g(c)}{x - c} \right) \\
+        &= \frac{1}{2} (g'(c) + g'(c)) \\
+        &= g'(c).
+      \end{align*}
+  \end{enumerate}
 \end{exercise}
 
 \end{document}

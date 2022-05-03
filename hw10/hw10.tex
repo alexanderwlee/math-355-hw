@@ -30,15 +30,80 @@
 \maketitle
 
 \begin{exercise}[5.3.2]
+  Suppose $f(a) = f(b)$ for some $a, b \in A$. Suppose towards a contradiction
+  that $a \neq b$. Without loss of generality, suppose $a < b$. By the Mean
+  Value Theorem, since $f : [a, b] \to \R$ is continuous on $[a, b]$ and
+  differentiable on $(a, b)$, there exists a point $c \in (a, b)$ where
+  \[
+    f'(c) = \frac{f(b) - f(a)}{b - a}.
+  \]
+  However, since $f(a) = f(b)$ and $b \neq a$, we have that $f'(c) = \frac{0}{b
+  - a} = 0$. This is a contradiction, since we assumed that $f'(x) \neq 0$ for
+  all $x \in A$. Thus, it must be that $a = b$ and therefore $f$ is one-to-one
+  on $A$.
+
+  To show that the converse statement need not be true, consider the
+  differentiable function $f(x) = x^3$ on the interval $A = (-1, 1)$. Here,
+  $f$ is clearly one-to-one, but $f'(0) = 0$.
 \end{exercise}
 
-\begin{exercise}[5.3.3]
+\begin{exercise}[5.3.3 skip (c)]
+  \begin{enumerate}[label={(\alph*)}]
+    \item Consider the function $f(x) = h(x) - x$ defined on the interval $[0,
+      3]$. To argue that there exists a point $d \in [0, 3]$ where $h(d) = d$,
+      we show that there exists a point $d \in [0, 3]$ where $f(d) = 0$. First,
+      consider
+      \[
+        f(0) = h(0) - 0 = 1 - 0 = 1.
+      \]
+      Then, consider
+      \[
+        f(3) = h(3) - 3 = 2 - 3 = -1.
+      \]
+      Also notice that because $h$ is differentiable on $[0, 3]$, $h$ is also
+      continuous on $[0, 3]$. It follows from the Algebraic Continuity Theorem
+      that $f(x) = h(x) - x$ is also continuous on $[0, 3]$. Since $f$ is
+      continuous on $[0, 3]$ and $f(3) = -1 < 0 < 1 = f(0)$, there exists a
+      point $d \in (0, 3)$ where $f(d) = 0$ by the Intermediate Value Theorem.
+      It follows that there exists a point $d \in [0, 3]$ where $h(d) = d$.
+    \item Since $h$ is differentiable on $[0, 3]$, $h$ is thus continuous on
+      $[0, 3]$ and differentiable on $(0, 3)$. Then, by the Mean Value Theorem,
+      there exists a point $c \in (0, 3)$ where
+      \[
+        h'(c) = \frac{h(3) - h(0)}{3 - 0} = \frac{2 - 1}{3} = \frac{1}{3}.
+      \]
+  \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[5.3.4]
+  \begin{enumerate}[label={(\alph*)}]
+    \item Because $f$ is differentiable on $A$, $f$ is also continuous on $A$.
+      By the Characterizations on Continuity, since $(x_n) \to 0$, it follows
+      that $f(x_n) \to f(0)$. Because $f(x_n) = 0$ for all $n \in \N$, it must
+      be that $f(0) = 0$. Furthermore, since $f$ is differentiable at 0 (and
+      $x_n \neq 0$), we have that
+      \[
+        f'(0) = \lim \frac{f(x_n) - f(0)}{x_n - 0} = \lim \frac{0 - 0}{x_n} =
+        \lim \frac{0}{x_n} = 0.
+      \]
+    \item Observe that since $f_n(x_n) = 0$ for all $n \in \N$, we also have
+      $f_n'(x) = 0$ for all $n \in \N$. Thus, given that $f$ is
+      twice-differentiable at zero, we have that
+      \[
+        f''(0) = \lim \frac{f'(x_n) - f'(0)}{x_n - 0} = \lim \frac{0 - 0}{x_n} =
+        \lim \frac{0}{x_n} = 0.
+      \]
+  \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[6.2.1]
+  \begin{enumerate}[label={(\alph*)}]
+    \item The pointwise limit of $(f_n)$ for all $x \in (0, \infty)$ is $f(x) =
+      \frac{1}{x}$.
+    \item TODO
+    \item TODO
+    \item TODO
+  \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[6.2.2]

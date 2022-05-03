@@ -80,18 +80,33 @@
     \item Because $f$ is differentiable on $A$, $f$ is also continuous on $A$.
       By the Characterizations on Continuity, since $(x_n) \to 0$, it follows
       that $f(x_n) \to f(0)$. Because $f(x_n) = 0$ for all $n \in \N$, it must
-      be that $f(0) = 0$. Furthermore, since $f$ is differentiable at 0 (and
-      $x_n \neq 0$), we have that
+      be that $f(0) = 0$. Furthermore, since $f$ is differentiable at zero, we
+      have that
+      \[
+        f'(0) = \lim_{x \to 0} \frac{f(x) - f(0)}{x - 0}.
+      \]
+      By the Sequential Criterion for Functional Limits, we also have that
       \[
         f'(0) = \lim \frac{f(x_n) - f(0)}{x_n - 0} = \lim \frac{0 - 0}{x_n} =
         \lim \frac{0}{x_n} = 0.
       \]
-    \item Observe that since $f_n(x_n) = 0$ for all $n \in \N$, we also have
-      $f_n'(x) = 0$ for all $n \in \N$. Thus, given that $f$ is
-      twice-differentiable at zero, we have that
+    \item Without loss of generality, suppose that $x_n > 0$ for all $n \in \N$.
+      Then, by the Mean Value Theorem, there exists a point $c_n \in (0, x_n)$
+      such that
       \[
-        f''(0) = \lim \frac{f'(x_n) - f'(0)}{x_n - 0} = \lim \frac{0 - 0}{x_n} =
-        \lim \frac{0}{x_n} = 0.
+        f'(c_n) = \frac{f(x_n) - f(0)}{x_n - 0} = \frac{0 - 0}{x_n} =
+        \frac{0}{x_n} = 0
+      \]
+      for all $n \in \N$. Since $f$ is twice-differentiable at zero, we have
+      that
+      \[
+        f''(0) = \lim_{x \to 0} \frac{f'(x) - f'(0)}{x - 0}.
+      \]
+      By the Squeeze Theorem, we have that $(c_n) \to 0$. Thus, it follows from
+      the Sequential Criterion for Functional Limits that
+      \[
+        f''(0) = \lim \frac{f'(c_n) - f'(0)}{c_n - 0} = \frac{0 - 0}{c_n} =
+        \frac{0}{c_n} = 0.
       \]
   \end{enumerate}
 \end{exercise}

@@ -156,15 +156,16 @@
         \epsilon.
       \]
 
-      We first show that $f$ is not continuous at zero. Since $x_n =
+      We show that $f_n \to f$ not uniformly on $\R$. Given $N \in \N$, choose
+      $n \ge N$ and $x = \frac{1}{n + 1}$. It follows that
+      \[
+        \abs{f_n(x) - f(x)} = \abs{0 - 1} = 1.
+      \]
+
+      We now show that $f$ is not continuous at zero. Since $x_n =
       \frac{1}{n}$ converges to 0 but $f(x_n)$ converges to $1 \neq 0 = f(0)$,
       it follows from the Criterion for Discontinuity that $f$ is not continuous
       at 0.
-
-      We now show that $f_n \to f$ not uniformly on $\R$. By the contrapositive
-      of the Continuous Limit Theorem, since $f$ is not continuous at zero and
-      each $f_n$ is continuous at zero, it must be that $f_n \to f$ not
-      uniformly on $\R$.
     \item Each $f_n$ is continuous at zero by the same argument from (a).
 
       To show that $g_n \to g$ uniformly on $\R$, Let $\epsilon > 0$ be

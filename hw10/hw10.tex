@@ -113,15 +113,82 @@
 
 \begin{exercise}[6.2.1]
   \begin{enumerate}[label={(\alph*)}]
-    \item The pointwise limit of $(f_n)$ for all $x \in (0, \infty)$ is $f(x) =
-      \frac{1}{x}$.
-    \item TODO
-    \item TODO
-    \item TODO
+    \item Given $x \in (0, \infty)$, we have that
+      \[
+        \lim f_n(x) = \lim \frac{nx}{1 + nx^2} = \lim \frac{x}{1/n + x^2} =
+        \frac{x}{x^2} = \frac{1}{x}
+      \]
+      by the Algebraic Limit Theorem.
+      Thus, the pointwise limit of $(f_n)$ for all $x \in (0, \infty)$ is $f(x)
+      = \frac{1}{x}$.
+    \item No. Observe that
+      \[
+        \abs{f_n(x) - f(x)} = \abs{\frac{nx}{1 + nx^2} - \frac{1}{x}} =
+        \abs{\frac{nx^2 - (1 + nx^2)}{x(1 + nx^2)}} = \frac{1}{x(1 + nx^2)}.
+      \]
+      Then given $N \in \N$, choose $n \ge \N$ and $x = \frac{1}{n} \in (0,
+      \infty)$. It follows that
+      \[
+        \abs{f_n(x) - f(x)} = \frac{1}{x(1 + nx^2)} = \frac{n}{1 + n \cdot
+        \frac{1}{n^2}} = \frac{n}{1 + \frac{1}{n}} = \frac{n^2}{n + 1} \ge
+        \frac{1}{2}.
+      \]
+      Therefore, the convergence is not uniform on $(0, \infty)$.
+    \item No. Same reasoning as (b). Observe that the choice of $x =
+      \frac{1}{n}$ is also in $(0, 1)$.
+    \item Yes. Let $\epsilon > 0$ be arbitrary. Choose $N \in \N$ such that $N >
+      \frac{1}{\epsilon}$. Then, whenever $n \ge N$ and $x \in (1, \infty)$, it
+      follows that
+      \[
+        \abs{f_n(x) - f(x)} = \frac{1}{x(1 + nx^2)} < \frac{1}{1 + n} <
+        \frac{1}{n} \le \frac{1}{N} < \epsilon.
+      \]
   \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[6.2.2]
+  \begin{enumerate}[label={(\alph*)}]
+    \item Each $f_n$ is continuous at zero. To see why, let $\epsilon > 0$ be
+      arbitrary and choose $\delta < \frac{1}{n}$. Then, if $\abs{x} < \delta$,
+      it follows that
+      \[
+        \abs{f_n(x) - f_n(0)} = \abs{f_n(x) - 0} = \abs{f_n(x)} = f_n(x) = 0 <
+        \epsilon.
+      \]
+
+      We first show that $f$ is not continuous at zero. Since $x_n =
+      \frac{1}{n}$ converges to 0 but $f(x_n)$ converges to $1 \neq 0 = f(0)$,
+      it follows from the Criterion for Discontinuity that $f$ is not continuous
+      at 0.
+
+      We now show that $f_n \to f$ not uniformly on $\R$. By the contrapositive
+      of the Continuous Limit Theorem, since $f$ is not continuous at zero and
+      each $f_n$ is continuous at zero, it must be that $f_n \to f$ not
+      uniformly on $\R$.
+    \item Each $f_n$ is continuous at zero by the same argument from (a).
+
+      To show that $g_n \to g$ uniformly on $\R$, Let $\epsilon > 0$ be
+      arbitrary, choose $N \in \N$ and let $n \ge N$. If $x = \frac{1}{k}$ for
+      some $k \in \N$ such that $k \le n$, then
+      \[
+        \abs{g_n(x) - g(x)} = \abs{\frac{1}{k} - \frac{1}{k}} = 0 < \epsilon.
+      \]
+      Otherwise, then
+      \[
+        \abs{g_n(x) - g(x)} = \abs{0 - 0} = 0 < \epsilon.
+      \]
+
+      We now show that $f$ is continuous at zero. Let $\epsilon > 0$ be
+      arbitrary and choose $\delta = \epsilon$. If $\abs{x} < \delta$, it
+      follows that
+      \[
+        \abs{g(x) - g(0)} = \abs{g(x) - 0} = \abs{g(x)} \le \abs{x} < \delta =
+        \epsilon.
+      \]
+    \item Each $f_n$ is continuous at zero by the same argument from (a).
+
+      TODO
+  \end{enumerate}
 \end{exercise}
 
 \end{document}

@@ -30,12 +30,84 @@
 \maketitle
 
 \begin{exercise}[6.3.1]
+  \begin{enumerate}[label={(\alph*)}]
+    \item We show that $(g_n)$ converges uniformly on $[0, 1]$ to $g = \lim g_n
+      = 0$. Given $\epsilon > 0$, choose $N \in \N$ such that $N > 1/\epsilon$.
+      Then, whenever $n \ge \N$ and $x \in [0, 1]$, it follows that
+      \[
+        \abs{g_n(x) - g(x)} = \abs{\frac{x^n}{n} - 0} = \abs{\frac{x^n}{n}} =
+        \frac{x^n}{n} \le \frac{1}{n} \le \frac{1}{N} < \epsilon.
+      \]
+
+      $g$ is differentiable since it is the constant function $g(x) = 0$ for all
+      $x \in [0, 1]$. Specifically, we have that $g'(x) = 0$ for all $x \in [0,
+      1]$.
+    \item By the Algebraic Differentiability Theorem, we have that
+      \[
+        g_n'(x) = \frac{n (nx^{n-1}) - x^n (0)}{n^2} = x^{n-1}.
+      \]
+      It follows that $(g_n')$ converges on [0, 1] to
+      \[
+        h(x) = \lim g_n'(x) =
+        \begin{cases}
+          0 & \text{if}\ 0 \le x < 1 \\
+          1 & \text{if}\ x = 1
+        \end{cases}.
+      \]
+      By the contrapositive of the Continuous Limit Theorem, since $h$ is not
+      continuous and $g_n'$ is continuous on $[0, 1]$, we have that $(g_n')$
+      does not converge uniformly on $[0, 1]$ to $h$. Observe that $h$ and $g'$
+      are not the same.
+  \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[6.3.2]
+  \begin{enumerate}[label={(\alph*)}]
+    \item The pointwise limit of $(h_n)$ is $h(x) = x$. To show that the
+      convergence is uniform on $\R$, let $\epsilon > 0$ be arbitrary and choose
+      $N \in \N$ such that $N > 1 / \epsilon^2$. Then, whenever $n \ge N$ and $x
+      \in \R$, it follows that
+      \[
+        \abs{h_n(x) - h(x)} = \abs{\sqrt{x^2 - \frac{1}{n}} - x} \le
+        \abs{\sqrt{x^2} + \sqrt{\frac{1}{n}} - x} = \sqrt{\frac{1}{n}} \le
+        \sqrt{\frac{1}{N}} < \epsilon.
+      \]
+    \item By the Chain Rule, we have that
+      \[
+        h_n'(x) = \frac{1}{2 \sqrt{x^2 + \frac{1}{n}}} \cdot 2x =
+        \frac{x}{\sqrt{x^2 + \frac{1}{n}}}.
+      \]
+      It follows that
+      \[
+        g(x) = \lim h_n'(x) = \lim \frac{x}{\sqrt{x^2 + \frac{1}{n}}} =
+        \frac{x}{\sqrt{x^2}} = 1.
+      \]
+      By the contrapositive of the Differentiable Limit Theorem, since $g(x) = 1
+      \neq x = h(x)$ and each $h_n$ is differentiable, it must be that $h_n'$
+      does not converge uniformly to $g(x)$ on $\R$, i.e., any neighborhood of
+      zero.
+  \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[6.4.2]
+  \begin{enumerate}[label={(\alph*)}]
+    \item True. Given that $\sum_{n=1}^\infty g_n$ converges uniformly, it
+      follows from a special case of the Cauchy Criterion for Uniform
+      Convergence of Series that that given $\epsilon > 0$, there exists an $N
+      \in \N$ such that whenever $m \ge N$ and $x \in A$, where $A$ is the
+      domain of $g_n$, we have that $\abs{g_{m+1}(x)} < \epsilon$. Therefore,
+      $(g_n)$ converges uniformly to zero.
+    \item True. Given that $0 \le f_n(x) \le g_n(x)$ and $\sum_{n=1}^\infty
+      g_n$ converges uniformly, it follows from the Cauchy Criterion for Series
+      that given $\epsilon > 0$, there exists an $N \in \N$ such that whenever
+      $n > m \ge N$, we have that
+      \[
+        \abs{f_{m+1}(x) + f_{m+2}(x) + \cdots + f_n(x)} \le \abs{g_{m+1}(x) +
+        g_{m+2}(x) + \cdots + g_n(x)} < \epsilon.
+      \]
+      Therefore, $\sum_{n=1}^\infty f_n$ converges uniformly as well.
+    \item False. TODO
+  \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[6.4.4]

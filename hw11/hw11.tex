@@ -114,7 +114,14 @@
 \end{exercise}
 
 \begin{exercise}[6.4.4]
-  TODO
+  Let $g_n(x) = \frac{x^{2n}}{(1 + x^{2n})}$. Observe that if $\abs{x} \ge 1$,
+  then $\lim g_n(x) \neq 0$, and so $g(x)$ is not converge for $\abs{x} \ge 1$.
+  On the other hand, if $x \in (-1, 1)$, then we have that $\abs{g_n(x)} \le
+  x^{2n}$. Since $\sum_{n=0}^\infty x^{2n}$ converges, it follows from the
+  Weierstrass M-Test that $g(x) = \sum_{n=0}^\infty g_n(x)$ converges uniformly
+  on $(-1, 1)$. Since each $g_n(x)$ is continuous on $(-1, 1)$, by the
+  Term-by-term Continuity Theorem, we also have that $g(x)$ is continuous on
+  $(-1, 1)$.
 \end{exercise}
 
 \begin{exercise}[6.4.5a]

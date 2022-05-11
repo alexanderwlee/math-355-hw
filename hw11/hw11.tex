@@ -106,7 +106,10 @@
         g_{m+2}(x) + \cdots + g_n(x)} < \epsilon.
       \]
       Therefore, $\sum_{n=1}^\infty f_n$ converges uniformly as well.
-    \item False. TODO
+    \item False. Consider $f_n(x) = \frac{1}{n^2}$ defined on $\R$. Clearly,
+      $\sum_{n=1}^\infty f_n$ converges uniformly on $\R$. Choose $M_n =
+      \frac{1}{n}$. Observe that $\abs{\frac{1}{n^2}} \le \frac{1}{n}$ for all
+      $x \in \R$, but $\sum_{n=1}^\infty M_n$ diverges.
   \end{enumerate}
 \end{exercise}
 
@@ -159,7 +162,22 @@
 \end{exercise}
 
 \begin{exercise}[6.5.2]
-  TODO
+  \begin{enumerate}[label={(\alph*)}]
+    \item Consider $a_n = \frac{1}{n!}$. We have that
+      \[
+        \lim \abs{\frac{x^{n+1}}{(n+1)!} \cdot \frac{n!}{x^n}} = \lim
+        \abs{\frac{x}{n+1}} = 0 < 1.
+      \]
+      By the Ratio Test, it follows $\sum a_n x^n$ converges.
+    \item Consider $a_n = {n!}$. We have that
+      \[
+        \lim \abs{\frac{x^{n+1} (n+1)!}{x^n n!}} = \lim \abs{xn} > 1.
+      \]
+      By the Ratio Test, it follows that $\sum a_n x^n$ diverges.
+    \item TODO
+    \item TODO
+    \item TODO
+  \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[6.5.4]

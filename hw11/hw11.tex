@@ -124,12 +124,46 @@
 \end{exercise}
 
 \begin{exercise}[6.5.1]
+  \begin{enumerate}[label={(\alph*)}]
+    \item $g$ can be rewritten as $g(x) = \sum_{n=1}^\infty {(-1)}^{n+1}
+      \frac{x^n}{n}$. If $x = 1$, then $g(x)$ converges by the Alternating
+      Series Test. By Theorem 6.5.1, it follows that $g(x)$ converges absolutely
+      for any $x \in (-1, 1)$. Therefore, $g$ is defined on $(-1, 1)$.
+
+      Since $g$ converges absolutely on $(-1, 1)$, it follows from Theorem
+      6.5.2 that $g$ converge uniformly on $(-1, 1)$. Also note that
+      ${(-1)}^{n+1} \frac{x^n}{n}$ is continuous on $(-1, 1)$. By the
+      Term-by-term Continuity Theorem, we have that $g$ is continuous on $(-1,
+      1)$.
+
+      Since $g(x)$ converges at the point $x = 1$, it follows from Abel's
+      Theorem that $g$ converges uniformly on the interval $[0, 1]$. We
+      established previously that $g$ also converges uniformly on $(-1, 1)$.
+      Therefore, we can conclude that $g$ converges uniformly on $\lparen -1, 1
+      \rbrack$ and is thus defined on this set.
+
+      Since $g(x)$ converges uniformly on $\lparen -1, 1 \rbrack$, we can also
+      conclude from the Term-by-term Continuity Theorem that $g$ is continuous
+      on $\lparen -1, 1 \rbrack$.
+
+      $g(x)$ is not defined when $x = -1$ since this value of $x$ yields the
+      harmonic series, which does not converge. Thus, $g$ is not defined on
+      $[-1, 1]$ and so cannot even be continuous on this set.
+
+      The power series for $g(x)$ cannot possibly converge for any other points
+      $\abs{x} > 1$ because $g(x)$ would be unbounded.
+
+    \item $g'(x) = \sum_{n=1}^\infty {(-1)}^{n+1} \frac{n x^{n-1}}{n} =
+      \sum_{n=1}^\infty {(-1)}^{n+1} x^{n-1}$. $g'(x)$ is defined on $(-1, 1)$.
+  \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[6.5.2]
+  TODO
 \end{exercise}
 
 \begin{exercise}[6.5.4]
+  TODO
 \end{exercise}
 
 \end{document}

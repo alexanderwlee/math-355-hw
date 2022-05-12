@@ -184,9 +184,31 @@
       By the Ratio Test, it follows that $\sum a_n x^n$ converges.
     \item Consider $a_n = {n!}$. Since $\lim a_n x^n \neq 0$ for all $x \in \R$,
       it follows that $\sum a_n x^n$ diverges.
-    \item TODO
-    \item TODO
-    \item TODO
+    \item Consider
+      \[
+        a_n =
+        \begin{cases}
+          0 & \text{if}\ n\ \text{odd} \\
+          1 / {(\frac{n}{2})}^2 & \text{if}\ n\ \text{even}
+        \end{cases}.
+      \]
+      Then, $\sum_{n=1}^\infty a_n x^n = \sum_{n=1}^\infty \frac{x^{2n}}{n^2}$,
+      which converges absolutely absolutely for all $x \in [-1, 1]$ and diverges
+      off this set.
+    \item Impossible. If the power series $\sum a_n x^n$ converges conditionally
+      at $x = -1$, then we know that $\sum \abs{a_n {(-1)}^n} = \sum \abs{a_n
+      1^n}$ diverges. Therefore, the power series cannot converge absolutely at
+      $x = 1$.
+    \item Consider
+      \[
+        a_n =
+        \begin{cases}
+          0 & \text{if}\ n\ \text{odd} \\
+          {(-1)}^\frac{n}{2} / \frac{n}{2} & \text{if}\ n\ \text{even}
+        \end{cases}.
+      \]
+      Then, $\sum_{n=1}^\infty a_n x^n = \sum_{n=1}^\infty \frac{{(-1)}^n
+      x^{2n}}{n}$, which converges conditionally at both $x = -1$ and $x = 1$.
   \end{enumerate}
 \end{exercise}
 

@@ -63,14 +63,15 @@
 
 \begin{exercise}[6.3.2]
   \begin{enumerate}[label={(\alph*)}]
-    \item The pointwise limit of $(h_n)$ is $h(x) = \abs{x}$. To show that the
-      convergence is uniform on $\R$, let $\epsilon > 0$ be arbitrary and choose
-      $N \in \N$ such that $N > 1 / \epsilon^2$. Then, whenever $n \ge N$ and $x
-      \in \R$, it follows that
+    \item The pointwise limit of $(h_n)$ is $h(x) = \lim \sqrt{x^2 +
+      \frac{1}{n}} = \sqrt{x^2} = \abs{x}$. To show that the convergence is
+      uniform on $\R$, let $\epsilon > 0$ be arbitrary and choose $N \in \N$
+      such that $N > 1 / \epsilon^2$. Then, whenever $n \ge N$ and $x \in \R$,
+      it follows that
       \begin{align*}
         \abs{h_n(x) - h(x)} &= \abs{\sqrt{x^2 + \frac{1}{n}} - \abs{x}} \le
         \abs{\sqrt{x^2} + \sqrt{\frac{1}{n}} - \abs{x}} \\
-        &= \abs{\abs{x} - \sqrt{\frac{1}{n}} - \abs{x}} = \sqrt{\frac{1}{n}} \le
+        &= \abs{\abs{x} + \sqrt{\frac{1}{n}} - \abs{x}} = \sqrt{\frac{1}{n}} \le
         \sqrt{\frac{1}{N}} < \epsilon.
       \end{align*}
     \item By the Chain Rule, we have that
@@ -78,20 +79,23 @@
         h_n'(x) = \frac{1}{2 \sqrt{x^2 + \frac{1}{n}}} \cdot 2x =
         \frac{x}{\sqrt{x^2 + \frac{1}{n}}}.
       \]
-      It follows that
+      For $x \neq 0$, it follows that
       \[
         g(x) = \lim h_n'(x) = \lim \frac{x}{\sqrt{x^2 + \frac{1}{n}}} =
         \frac{x}{\sqrt{x^2}} = \frac{x}{\abs{x}} =
         \begin{cases}
           -1 & x < 0 \\
-          0 & x = 0 \\
           1 & x > 0
         \end{cases}.
       \]
-      Observe that $g(x)$ is not continuous at $x = 0$ but each $h_n'(x)$ is
-      continuous at $x = 0$. Therefore, by the contrapositive of the Continuous
-      Limit Theorem, it follows that $h_n'(x)$ does not converge uniformly on
-      any neighborhood of zero.
+      For $x = 0$, we have
+      \[
+        g(0) = \lim h_n'(x) = \lim \frac{0}{\sqrt{0^2 + \frac{1}{n}}} = 0.
+      \]
+      Thus, $g(x)$ exists for all $x$. Observe that $g(x)$ is not continuous at
+      $x = 0$ but each $h_n'(x)$ is continuous at $x = 0$. Therefore, by the
+      contrapositive of the Continuous Limit Theorem, it follows that $h_n'(x)$
+      does not converge uniformly on any neighborhood of zero.
   \end{enumerate}
 \end{exercise}
 
@@ -115,20 +119,26 @@
     \item False. Consider $f_n(x) = \frac{1}{n^2}$ defined on $\R$. Clearly,
       $\sum_{n=1}^\infty f_n$ converges uniformly on $\R$. Choose $M_n =
       \frac{1}{n}$. Observe that $\abs{\frac{1}{n^2}} \le \frac{1}{n}$ for all
-      $x \in \R$, but $\sum_{n=1}^\infty M_n$ diverges.
+      $x \in \R$, but $\sum_{n=1}^\infty M_n$ diverges. %TODO: i think this is wrong
   \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[6.4.4]
-  % TODO: fix, the bound can't be int
   Let $g_n(x) = \frac{x^{2n}}{(1 + x^{2n})}$. Observe that if $\abs{x} \ge 1$,
   then $\lim g_n(x) \neq 0$, and so $g(x)$ is not converge for $\abs{x} \ge 1$.
-  On the other hand, if $x \in (-1, 1)$, then we have that $\abs{g_n(x)} \le
-  x^{2n}$. Since $\sum_{n=0}^\infty x^{2n}$ converges, it follows from the
-  Weierstrass M-Test that $g(x) = \sum_{n=0}^\infty g_n(x)$ converges uniformly
-  on $(-1, 1)$. Since each $g_n(x)$ is continuous on $(-1, 1)$, by the
-  Term-by-term Continuity Theorem, we also have that $g(x)$ is continuous on
-  $(-1, 1)$.
+  Now for any $[-c, c]$ with $c \in (0, 1)$, choose $M_n = \frac{c^{2n}}{1 +
+  c^{2n}}$. It follows from a variant of the geometric series that
+  \[
+    \sum_{n=1}^\infty M_n = \sum_{n=1}^\infty \frac{c^{2n}}{1 + c^{2n}} <
+    \sum_{n=1}^\infty c^{2n} = \frac{c^2}{1 - c^2}.
+  \]
+  Note that $\abs{g_n(x)} \le M_n$ for $x \in [-c, c]$. By the Weierstrass
+  M-Test, it follows that $g(x) = \sum_{n=1}^\infty g_n(x)$ converges uniformly
+  on $[-c, c]$. Thus, we have that $g(x)$ converges on $(-1, 1)$. For
+  continuity, since $g(x)$ converges uniformly on $[-c, c]$ and each $g_n(x)$ is
+  continuous on $[-c, c]$, it follows from the Term-by-term Continuity Theorem
+  that $g(x)$ is continuous on $[-c, c]$. Hence, $g(x)$ is continuous on $(-1,
+  1)$.
 \end{exercise}
 
 \begin{exercise}[6.4.5a]
@@ -142,41 +152,43 @@
 
 \begin{exercise}[6.5.1]
   \begin{enumerate}[label={(\alph*)}]
-    \item $g$ can be rewritten as $g(x) = \sum_{n=1}^\infty {(-1)}^{n+1}
-      \frac{x^n}{n}$. If $x = 1$, then $g(x)$ converges by the Alternating
-      Series Test. By Theorem 6.5.1, it follows that $g(x)$ converges absolutely
-      for any $x \in (-1, 1)$. Therefore, $g$ is defined on $(-1, 1)$.
+    \item $g$ can be rewritten as the power series
+      \[
+        g(x) = \sum_{n=1}^\infty {(-1)}^{n+1} \frac{x^n}{n}.
+      \]
+      If $x = 1$, then $g(x)$ converges by the Alternating Series Test. By
+      Theorem 6.5.1, it follows that $g(x)$ converges absolutely for any $x \in
+      (-1, 1)$. Therefore, $g$ is converges and hence defined on $(-1, 1)$.
 
-      Since $g$ converges absolutely on $(-1, 1)$, it follows from Theorem
-      6.5.2 that $g$ converge uniformly on $(-1, 1)$. Also note that
-      ${(-1)}^{n+1} \frac{x^n}{n}$ is continuous on $(-1, 1)$. By the
-      Term-by-term Continuity Theorem, we have that $g$ is continuous on $(-1,
-      1)$.
+      Since $g$ converges on $(-1, 1)$, it follows from Theorem
+      6.5.7 that $g$ is continuous on $(-1, 1)$.
 
       Since $g(x)$ converges at the point $x = 1$, it follows from Abel's
       Theorem that $g$ converges uniformly on the interval $[0, 1]$. We
-      established previously that $g$ also converges uniformly on $(-1, 1)$.
-      Therefore, we can conclude that $g$ converges uniformly on $\lparen -1, 1
-      \rbrack$ and is thus defined on this set.
+      established previously that $g$ also converges on $(-1, 1)$. Therefore, we
+      can conclude that $g$ converges on $\lparen -1, 1 \rbrack$ and is thus
+      defined on this set.
 
-      Since $g(x)$ converges uniformly on $\lparen -1, 1 \rbrack$, we can also
-      conclude from the Term-by-term Continuity Theorem that $g$ is continuous
-      on $\lparen -1, 1 \rbrack$.
+      Since $g(x)$ converges on $\lparen -1, 1 \rbrack$, it follows from Theorem
+      6.5.7 that $g$ is continuous on this set.
 
-      $g(x)$ is not defined when $x = -1$ since this value of $x$ yields the
+      $g(x)$ is undefined for $x = -1$ since this value of $x$ yields the
       harmonic series, which does not converge. Thus, $g$ is not defined on
       $[-1, 1]$ and so cannot even be continuous on this set.
 
       The power series for $g(x)$ cannot possibly converge for any other points
       $\abs{x} > 1$ because $g(x)$ would be unbounded.
 
-    \item $g'(x) = \sum_{n=1}^\infty {(-1)}^{n+1} \frac{n x^{n-1}}{n} =
-      \sum_{n=1}^\infty {(-1)}^{n+1} x^{n-1}$. $g'(x)$ is defined on $(-1, 1)$.
+    \item $g'(x)$ is defined on $(-1, 1)$, where
+      \[
+        g'(x) = \sum_{n=1}^\infty {(-1)}^{n+1} \frac{n x^{n-1}}{n} =
+        \sum_{n=1}^\infty {(-1)}^{n+1} x^{n-1},
+      \]
+      by Theorem 6.5.7.
   \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[6.5.2]
-  % TODO: this stuff is probably wrong...
   \begin{enumerate}[label={(\alph*)}]
     \item Consider $a_n = \frac{1}{n!}$. We have that
       \[
@@ -223,7 +235,7 @@
       \]
       We now show that $\sum_{n=0}^\infty \abs{x} \abs{a_n x^n}$ converges.
       Recall that $f(x)$ converges on $(-R, R)$. Thus, by Theorem 6.5.1, $f(x)$
-      converges uniformly on $(-R, R)$. Since $\sum_{n=0}^\infty \abs{a_n x^n}$
+      converges absolutely on $(-R, R)$. Since $\sum_{n=0}^\infty \abs{a_n x^n}$
       converges, it follows that $\sum_{n=0}^\infty \abs{x} \abs{a_n x^n}$
       converges. By the Comparison Test, it follows that $\sum_{n=0}^\infty
       \abs{\frac{a_n}{n+1} x^{n+1}}$ converges. Therefore, $F(x)$ converges on

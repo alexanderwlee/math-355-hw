@@ -120,6 +120,7 @@
 \end{exercise}
 
 \begin{exercise}[6.4.4]
+  % TODO: fix, the bound can't be int
   Let $g_n(x) = \frac{x^{2n}}{(1 + x^{2n})}$. Observe that if $\abs{x} \ge 1$,
   then $\lim g_n(x) \neq 0$, and so $g(x)$ is not converge for $\abs{x} \ge 1$.
   On the other hand, if $x \in (-1, 1)$, then we have that $\abs{g_n(x)} \le
@@ -227,11 +228,8 @@
       \abs{\frac{a_n}{n+1} x^{n+1}}$ converges. Therefore, $F(x)$ converges on
       $(-R, R)$ as well by the Absolute Convergence Test.
 
-      We now show that $F'(x) = f(x)$. Since $f(x)$ converges on $(-R, R)$, it
-      follows from Theorem 6.5.5 that $f(x)$ converges uniformly on $(-R, R)$.
-      Because $\frac{a_n}{n+1} x^{n+1}$ is differentiable on $(-R, R)$ and
-      $F(x)$ converges on $(-R, R)$, we have that $F(x)$ is differentiable and
-      $F'(x) = f(x)$.
+      Since $F(x)$ converges on $(-R, R)$, we have that $F$ is differentiable
+      and $F'(x) = f(x)$ by Theorem 6.5.7.
     \item $g(x) = F(x) + c = (\sum_{n=0}^\infty \frac{a_n}{n+1} x^{n+1}) + c$,
       for some $c \in \R$.
   \end{enumerate}

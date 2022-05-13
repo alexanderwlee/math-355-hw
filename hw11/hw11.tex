@@ -116,10 +116,15 @@
         g_{m+2}(x) + \cdots + g_n(x)} < \epsilon.
       \]
       Therefore, $\sum_{n=1}^\infty f_n$ converges uniformly as well.
-    \item False. Consider $f_n(x) = \frac{1}{n^2}$ defined on $\R$. Clearly,
-      $\sum_{n=1}^\infty f_n$ converges uniformly on $\R$. Choose $M_n =
-      \frac{1}{n}$. Observe that $\abs{\frac{1}{n^2}} \le \frac{1}{n}$ for all
-      $x \in \R$, but $\sum_{n=1}^\infty M_n$ diverges. %TODO: i think this is wrong
+    \item False. Consider $f_n(x) = {(-1)}^n \frac{x^n}{n}$. Observe that
+      $\sum_{n=1}^\infty f_n(x)$ converges for $x = 1$ by the Alternating Series
+      Test. By Abel's Theorem, it follows that $\sum_{n=1}^\infty f_n(x)$
+      converges uniformly on the interval $A = [0, 1]$. We want to show that for
+      all $M_n$, there exists an $x \in [0, 1]$ such that $\abs{f_n(x) > M_n}$
+      or $\sum_{n=1}^\infty M_n$ diverges. Fix $x = 1 \in [0, 1]$ and let $M_n$
+      be arbitrary. If $\abs{f_n(x)} > M_n$, then we are done. If $\abs{f_n(x)}
+      = \frac{1}{n} \le M_n$, then $\sum_{n=1}^\infty M_n$ diverges by the
+      Comparison Test.
   \end{enumerate}
 \end{exercise}
 
